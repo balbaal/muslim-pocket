@@ -1,10 +1,17 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import Icon from "@/components/Icons";
 
 const Home = () => {
+  const router = useRouter();
+
   const handleClickPlayAyah = () => {
     alert("Play !!!");
+  };
+
+  const handleClickAllSurah = () => {
+    router.push("/all-surah");
   };
 
   return (
@@ -12,7 +19,10 @@ const Home = () => {
       <div className="flex flex-col gap-4 text-blue-950 max-w-[300px] mx-auto text-center">
         <h1 className="text-5xl font-medium">Qur&lsquo;an Online</h1>
         <p>Without ads, simple & enjoy the Qur&apos;an anywhere, anytime</p>
-        <button className="cursor-pointer bg-blue-950 px-4 py-3 text-white rounded-md font-semibold">
+        <button
+          onClick={handleClickAllSurah}
+          className="cursor-pointer bg-blue-950 px-4 py-3 text-white rounded-md font-semibold"
+        >
           Explore Surah
         </button>
       </div>
