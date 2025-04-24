@@ -1,7 +1,6 @@
 "use client";
 
-import Image from "next/image";
-import PlayIcon from "@/assets/icons/play.svg";
+import Icon from "@/components/Icons";
 
 const Home = () => {
   const handleClickPlayAyah = () => {
@@ -35,7 +34,7 @@ const Home = () => {
             onClick={handleClickPlayAyah}
             className="cursor-pointer p-3 bg-gray-300 rounded-full"
           >
-            <Image alt="play-icon" src={PlayIcon} height={16} width={16} />
+            <Icon name="play" />
           </button>
         </div>
       </div>
