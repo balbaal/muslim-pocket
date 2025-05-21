@@ -9,7 +9,7 @@ type InputProps = {
 
 const Input: React.FC<InputProps> = ({ type, prefix, placeholder, onChange }) => {
   return (
-    <div className="flex items-center gap-2 border border-gray-100 rounded-md px-3 py-2 focus-within:ring-2 focus-within:ring-blue-500 bg-gray-100">
+    <div className="flex items-center gap-2 border border-gray-300 rounded-lg px-3 py-2 focus-within:ring-2 focus-within:ring-blue-500 bg-white">
       {prefix && <span className="text-gray-500">{prefix}</span>}
       <input
         type={type}
