@@ -1,54 +1,62 @@
 "use client";
 
-import { useRouter } from "next/navigation";
 import Icon from "@/components/Icons";
+import features from "@/data/features";
+import Link from "next/link";
 
 const Home = () => {
-  const router = useRouter();
-
   const handleClickPlayAyah = () => {
     alert("Play !!!");
   };
 
-  const handleClickAllSurah = () => {
-    router.push("/all-surah");
-  };
-
   return (
-    <div className="px-4 pt-12">
-      <div className="flex flex-col gap-4 text-blue-950 max-w-[300px] mx-auto text-center">
-        <h1 className="text-5xl font-medium">Qur&lsquo;an Online</h1>
-        <p>Without ads, simple & enjoy the Qur&apos;an anywhere, anytime</p>
-        <button
-          onClick={handleClickAllSurah}
-          className="cursor-pointer bg-blue-950 px-4 py-3 text-white rounded-md font-semibold"
-        >
-          Explore Surah
-        </button>
-      </div>
-      <hr className="mt-14 mb-10 -mx-4 " />
-      <div className="text-blue-950">
-        <h2 className="font-semibold text-xl mb-8">Ayah of the Day</h2>
-        <div className="flex flex-col gap-2">
-          <p className="text-right text-3xl">
-            اٰمَنُوْا قُوْٓا اَنْفُسَكُمْ وَاَهْلِيْكُمْ نَارًا وَّقُوْدُهَا النَّاسُ وَالْحِجَارَةُ
-            عَلَيْهَا مَلٰۤىِٕكَةٌ
-          </p>
-          <p className="italic">
-            &quot;Wahai Nabi! Mengapa engkau mengharamkan apa yang dihalalkan Allah bagimu? Engkau
-            ingin menyenangkan hati istri-istrimu? Dan Allah Maha Pengampun, Maha Penyayang.&quot;
-          </p>
+    <div className="px-4 pt-4 flex flex-col gap-6">
+      <section>
+        <h2 className="font-bold text-lg flex items-center gap-2 text-black mb-4">
+          <span>🎶</span>
+          Ayat Hari Ini
+        </h2>
+        <div className="flex flex-col gap-2 shadow rounded-lg p-4 bg-gray-100 text-black">
+          <div className="flex flex-col gap-2">
+            <p className="text-right text-3xl">
+              اٰمَنُوْا قُوْٓا اَنْفُسَكُمْ وَاَهْلِيْكُمْ نَارًا وَّقُوْدُهَا النَّاسُ
+              وَالْحِجَارَةُ عَلَيْهَا مَلٰۤىِٕكَةٌ
+            </p>
+            <p className="italic">
+              &quot;Wahai Nabi! Mengapa engkau mengharamkan apa yang dihalalkan Allah bagimu? Engkau
+              ingin menyenangkan hati istri-istrimu? Dan Allah Maha Pengampun, Maha Penyayang.&quot;
+            </p>
+          </div>
+          <div className="flex justify-end">
+            <button
+              onClick={handleClickPlayAyah}
+              className="cursor-pointer p-3 bg-white shadow rounded-full"
+              aria-label="button-play"
+            >
+              <Icon name="play" className="text-black" />
+            </button>
+          </div>
         </div>
-        <div className="flex justify-end mt-10">
-          <button
-            onClick={handleClickPlayAyah}
-            className="cursor-pointer p-3 bg-gray-300 rounded-full"
-            aria-label="button-play"
-          >
-            <Icon name="play" className="text-black" />
-          </button>
+      </section>
+      <section>
+        <h2 className="font-bold text-lg flex items-center gap-2 text-black mb-4">
+          <span>🚀</span>
+          Fitur Muslim-Pocket.com
+        </h2>
+        <div className="grid grid-cols-2 gap-2">
+          {features.map((feature) => (
+            <Link
+              href={feature.link}
+              key={feature.id}
+              className="bg-gray-100 shadow rounded-lg p-4"
+            >
+              <p className="flex gap-2 text-black items-center">
+                {feature.icon} <span>{feature.title}</span>
+              </p>
+            </Link>
+          ))}
         </div>
-      </div>
+      </section>
     </div>
   );
 };
