@@ -1,3 +1,5 @@
+import Header from "@/components/Header";
+import Sidebar from "@/components/Sidebar";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Noto_Naskh_Arabic } from "next/font/google";
 import "./globals.css";
@@ -32,7 +34,13 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${arabicFont.variable} antialiased`}
       >
-        <div className="max-w-[500px] mx-auto h-screen bg-white shadow-xl">{children}</div>
+        <section className="flex justify-around">
+          <Sidebar />
+          <div className="max-w-[500px] mx-auto h-screen bg-white shadow-xl">
+            <Header />
+            {children}
+          </div>
+        </section>
       </body>
     </html>
   );
