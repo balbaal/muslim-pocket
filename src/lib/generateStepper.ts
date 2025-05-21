@@ -1,4 +1,4 @@
-import surahList from "@/data/surah-list";
+import { surahList } from "@/data/surah-list";
 import { Step } from "@/types/step";
 
 const generateStepper = (path: string) => {
