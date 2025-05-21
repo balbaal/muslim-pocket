@@ -1,6 +1,6 @@
 import { SurahList } from "@/types/surah";
 
-const surahList: SurahList = [
+export const surahList: SurahList = [
   {
     number: "1",
     name: "الفاتحة",
@@ -12,9 +12,70 @@ const surahList: SurahList = [
     number: "2",
     name: "البقرة",
     name_latin: "Al-Baqarah",
-    translation_name: "Sapi",
+    translation_name: "Sapi Betina",
     number_of_ayah: "286",
   },
+  {
+    number: "3",
+    name: "آل عمران",
+    name_latin: "Ali 'Imran",
+    translation_name: "Keluarga Imran",
+    number_of_ayah: "200",
+  },
+  {
+    number: "4",
+    name: "النساء",
+    name_latin: "An-Nisa'",
+    translation_name: "Wanita",
+    number_of_ayah: "176",
+  },
+  {
+    number: "5",
+    name: "المائدة",
+    name_latin: "Al-Ma'idah",
+    translation_name: "Hidangan",
+    number_of_ayah: "120",
+  },
+  {
+    number: "6",
+    name: "الأنعام",
+    name_latin: "Al-An'am",
+    translation_name: "Hewan Ternak",
+    number_of_ayah: "165",
+  },
+  {
+    number: "7",
+    name: "الأعراف",
+    name_latin: "Al-A'raf",
+    translation_name: "Tempat yang Tinggi",
+    number_of_ayah: "206",
+  },
+  {
+    number: "8",
+    name: "الأنفال",
+    name_latin: "Al-Anfal",
+    translation_name: "Rampasan Perang",
+    number_of_ayah: "75",
+  },
+  {
+    number: "9",
+    name: "التوبة",
+    name_latin: "At-Taubah",
+    translation_name: "Pengampunan",
+    number_of_ayah: "129",
+  },
+  {
+    number: "10",
+    name: "يونس",
+    name_latin: "Yunus",
+    translation_name: "Yunus",
+    number_of_ayah: "109",
+  },
+  {
+    number: "11",
+    name: "هود",
+    name_latin: "Hud",
+    translation_name: "Hud",
+    number_of_ayah: "123",
+  },
 ];
-
-export default surahList;

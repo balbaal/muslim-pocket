@@ -4,9 +4,10 @@ import { usePathname } from "next/navigation";
 import Input from "@/components/Input";
 import Icon from "@/components/Icons";
 import SurahCard from "@/components/SurahCard";
-import { surahs } from "@/data/surahs";
+import { surahList } from "@/data/surah-list";
 import Stepper from "@/components/Stepper";
 import generateStepper from "@/lib/generateStepper";
+import { surahRevelation } from "@/data/surah-revelation";
 
 const SurahList = () => {
   const pathname = usePathname();
@@ -25,15 +26,15 @@ const SurahList = () => {
         />
       </div>
       <div className="flex flex-col gap-2">
-        {surahs.map((surah) => (
+        {surahList.map((surah) => (
           <SurahCard
             key={surah.number}
             number={surah.number}
             name={surah.name}
-            englishName={surah.englishName}
-            englishNameTranslation={surah.englishNameTranslation}
-            numberOfAyahs={surah.numberOfAyahs}
-            revelationType={surah.revelationType}
+            name_latin={surah.name_latin}
+            translation_name={surah.translation_name}
+            number_of_ayah={surah.number_of_ayah}
+            revelation_type={surahRevelation[surah.number]}
           />
         ))}
       </div>
