@@ -28,7 +28,7 @@ const Home = () => {
       </div>
       <hr className="mt-14 mb-10 -mx-4 " />
       <div className="text-blue-950">
-        <h3 className="font-semibold text-xl mb-8">Ayah of the Day</h3>
+        <h2 className="font-semibold text-xl mb-8">Ayah of the Day</h2>
         <div className="flex flex-col gap-2">
           <p className="text-right text-3xl">
             اٰمَنُوْا قُوْٓا اَنْفُسَكُمْ وَاَهْلِيْكُمْ نَارًا وَّقُوْدُهَا النَّاسُ وَالْحِجَارَةُ
@@ -43,8 +43,9 @@ const Home = () => {
           <button
             onClick={handleClickPlayAyah}
             className="cursor-pointer p-3 bg-gray-300 rounded-full"
+            aria-label="button-play"
           >
-            <Icon name="play" />
+            <Icon name="play" className="text-black" />
           </button>
         </div>
       </div>
