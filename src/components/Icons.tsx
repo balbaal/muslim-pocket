@@ -8,6 +8,7 @@ import HomeOutline from "@/assets/icons/home-outline.svg";
 import PlanetOutline from "@/assets/icons/planet-outline.svg";
 import SettingsOutline from "@/assets/icons/settings-outline.svg";
 import AlertCircleOutline from "@/assets/icons/alert-circle-outline.svg";
+import ChevronForwardOutline from "@/assets/icons/chevron-forward-outline.svg";
 // Update "union type IconName" & "interface IconComponent",
 // If you add new Icon SVG on "assets/icons/"
 
@@ -20,6 +21,7 @@ interface IconComponent {
   "planet-outline": React.ComponentType<React.SVGProps<SVGSVGElement>>;
   "settings-outline": React.ComponentType<React.SVGProps<SVGSVGElement>>;
   "alert-circle-outline": React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  "chevron-forward-outline": React.ComponentType<React.SVGProps<SVGSVGElement>>;
 }
 
 type IconName =
@@ -30,7 +32,8 @@ type IconName =
   | "home-outline"
   | "planet-outline"
   | "settings-outline"
-  | "alert-circle-outline";
+  | "alert-circle-outline"
+  | "chevron-forward-outline";
 
 type IconProps = {
   name: IconName;
@@ -47,6 +50,7 @@ const icons: IconComponent = {
   "planet-outline": PlanetOutline,
   "settings-outline": SettingsOutline,
   "alert-circle-outline": AlertCircleOutline,
+  "chevron-forward-outline": ChevronForwardOutline,
 };
 
 const Icon: FC<IconProps> = ({ name, size = 16, className = "" }) => {
