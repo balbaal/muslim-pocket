@@ -4,7 +4,10 @@ import Play from "@/assets/icons/play.svg";
 import SearchOutline from "@/assets/icons/search-outline.svg";
 import MenuOutline from "@/assets/icons/menu-outline.svg";
 import CloseOutline from "@/assets/icons/close-outline.svg";
-
+import HomeOutline from "@/assets/icons/home-outline.svg";
+import PlanetOutline from "@/assets/icons/planet-outline.svg";
+import SettingsOutline from "@/assets/icons/settings-outline.svg";
+import AlertCircleOutline from "@/assets/icons/alert-circle-outline.svg";
 // Update "union type IconName" & "interface IconComponent",
 // If you add new Icon SVG on "assets/icons/"
 
@@ -13,9 +16,21 @@ interface IconComponent {
   "search-outline": React.ComponentType<React.SVGProps<SVGSVGElement>>;
   "menu-outline": React.ComponentType<React.SVGProps<SVGSVGElement>>;
   "close-outline": React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  "home-outline": React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  "planet-outline": React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  "settings-outline": React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  "alert-circle-outline": React.ComponentType<React.SVGProps<SVGSVGElement>>;
 }
 
-type IconName = "play" | "search-outline" | "menu-outline" | "close-outline";
+type IconName =
+  | "play"
+  | "search-outline"
+  | "menu-outline"
+  | "close-outline"
+  | "home-outline"
+  | "planet-outline"
+  | "settings-outline"
+  | "alert-circle-outline";
 
 type IconProps = {
   name: IconName;
@@ -28,6 +43,10 @@ const icons: IconComponent = {
   "search-outline": SearchOutline,
   "menu-outline": MenuOutline,
   "close-outline": CloseOutline,
+  "home-outline": HomeOutline,
+  "planet-outline": PlanetOutline,
+  "settings-outline": SettingsOutline,
+  "alert-circle-outline": AlertCircleOutline,
 };
 
 const Icon: FC<IconProps> = ({ name, size = 16, className = "" }) => {

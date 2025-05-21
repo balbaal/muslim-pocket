@@ -1,19 +1,16 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import Icon from "./Icons";
 import Link from "next/link";
+import { useMenuStore } from "@/store/useMenuStore";
 
 const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const handleClickMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+  const { isMenuOpen, toggleMenu } = useMenuStore();
 
   return (
     <header className="flex items-center justify-between border-b px-4 py-3">
-      <button onClick={handleClickMenu} className="cursor-pointer">
+      <button onClick={toggleMenu} className="cursor-pointer">
         {isMenuOpen ? (
           <Icon
             name="close-outline"
