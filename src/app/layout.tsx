@@ -32,7 +32,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${arabicFont.variable} antialiased`}
       >
-        <div className="max-w-[400px] mx-auto h-screen bg-white shadow-xl">{children}</div>
+        <div className="max-w-[500px] mx-auto h-screen bg-white shadow-xl">{children}</div>
       </body>
     </html>
   );
