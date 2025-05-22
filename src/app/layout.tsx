@@ -1,4 +1,5 @@
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import SidebarContainer from "@/components/SidebarContainer";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Noto_Naskh_Arabic } from "next/font/google";
@@ -39,6 +40,7 @@ export default function RootLayout({
           <div className="overflow-y-auto w-full max-w-[500px] mx-auto h-screen bg-white shadow-xl min-h-screen">
             <Header />
             {children}
+            <Footer />
           </div>
         </section>
       </body>
