@@ -5,3 +5,7 @@ export const toArabicNumber = (input: string): string => {
     .map((char) => (/\d/.test(char) ? arabicDigits[parseInt(char)] : char))
     .join("");
 };
+
+export const clearString = (input: string): string => {
+  return input.replace(/[^a-zA-Z0-9]/g, "");
+};
