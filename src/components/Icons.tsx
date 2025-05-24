@@ -11,6 +11,8 @@ import AlertCircleOutline from "@/assets/icons/alert-circle-outline.svg";
 import ChevronForwardOutline from "@/assets/icons/chevron-forward-outline.svg";
 import HeartOutline from "@/assets/icons/heart-outline.svg";
 import Heart from "@/assets/icons/heart.svg";
+import Copy from "@/assets/icons/copy.svg";
+import Rocket from "@/assets/icons/rocket.svg";
 // Update "union type IconName" & "interface IconComponent",
 // If you add new Icon SVG on "assets/icons/"
 
@@ -26,6 +28,8 @@ interface IconComponent {
   "chevron-forward-outline": React.ComponentType<React.SVGProps<SVGSVGElement>>;
   "heart-outline": React.ComponentType<React.SVGProps<SVGSVGElement>>;
   heart: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  copy: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  rocket: React.ComponentType<React.SVGProps<SVGSVGElement>>;
 }
 
 type IconName =
@@ -39,13 +43,15 @@ type IconName =
   | "alert-circle-outline"
   | "chevron-forward-outline"
   | "heart-outline"
-  | "heart";
+  | "heart"
+  | "copy"
+  | "rocket";
 
 type IconProps = {
   name: IconName;
   size?: number;
   className?: string;
-};
+} & React.SVGProps<SVGSVGElement>; // Added rest props for SVG attributes
 
 const icons: IconComponent = {
   play: Play,
@@ -59,12 +65,14 @@ const icons: IconComponent = {
   "chevron-forward-outline": ChevronForwardOutline,
   "heart-outline": HeartOutline,
   heart: Heart,
+  copy: Copy,
+  rocket: Rocket,
 };
 
-const Icon: FC<IconProps> = ({ name, size = 16, className = "" }) => {
+const Icon: FC<IconProps> = ({ name, size = 16, className = "", ...props }) => {
   const SVGIcon = icons[name];
 
-  return <SVGIcon className={className} width={size} height={size} aria-hidden="true" />;
+  return <SVGIcon className={className} width={size} height={size} aria-hidden="true" {...props} />;
 };
 
 export default Icon;
