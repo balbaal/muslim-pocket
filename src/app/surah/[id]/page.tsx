@@ -1,13 +1,25 @@
-"use client";
-
 import Stepper from "@/components/Stepper";
 import SurahCard from "@/components/SurahCard";
 import generateStepper from "@/lib/generateStepper";
-import { usePathname } from "next/navigation";
+import { notFound } from "next/navigation";
 import ListView from "./ListView";
+import { SurahItem } from "@/types/surah";
+import { surahRevelation } from "@/data/surah-revelation";
 
-const SurahDetail = () => {
-  const pathname = usePathname();
+async function getSurahData(id: string): Promise<SurahItem> {
+  try {
+    const surah = await import(`@/data/surah/${id}.ts`);
+    return surah.default;
+  } catch {
+    notFound();
+  }
+}
+
+type SurahDetailProps = { params: { id: string } };
+
+const SurahDetail = async ({ params }: SurahDetailProps) => {
+  const { id } = await params;
+  const surahData = await getSurahData(id);
 
   return (
     <main className="p-4 flex flex-col gap-6">
@@ -15,19 +27,19 @@ const SurahDetail = () => {
         <h1 className="text-2xl font-bold text-black flex items-center gap-2">
           📖 <span>Baca per Surat</span>
         </h1>
-        <Stepper steps={generateStepper(pathname)} />
+        <Stepper steps={generateStepper(`/surah/${id}`)} />
         <SurahCard
-          number="1"
-          name="الفاتحة"
-          name_latin="Al-Fatihah"
-          translation_name="Pembukaan"
-          number_of_ayah={"7"}
-          revelation_type="Madaniyah"
+          number={surahData.number}
+          name={surahData.name}
+          name_latin={surahData.name_latin}
+          translation_name={surahData.translations.id.name}
+          number_of_ayah={surahData.number_of_ayah}
+          revelation_type={surahRevelation[id]}
         />
       </section>
       <div>Pagination Top</div>
       <article className="flex flex-col gap-2">
-        <ListView />
+        <ListView surahData={surahData} />
       </article>
       <div>Pagination Bottom</div>
     </main>

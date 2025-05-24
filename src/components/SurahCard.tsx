@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { SurahItemPreview } from "@/types/surah";
 import Link from "next/link";
