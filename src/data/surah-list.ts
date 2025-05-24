@@ -1,6 +1,6 @@
-import { SurahList } from "@/types/surah";
+import { SurahItemPreview } from "@/types/surah";
 
-export const surahList: SurahList = [
+export const surahList: SurahItemPreview[] = [
   {
     number: "1",
     name: "الفاتحة",

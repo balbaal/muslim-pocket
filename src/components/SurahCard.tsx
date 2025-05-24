@@ -1,10 +1,10 @@
 import React from "react";
-import { SurahItem } from "@/types/surah";
+import { SurahItemPreview } from "@/types/surah";
 import Link from "next/link";
 import Icon from "./Icons";
 import { toArabicNumber } from "@/lib/transformString";
 
-type SurahCardProps = SurahItem & { revelation_type: "Madaniyah" | "Makkiyah" };
+type SurahCardProps = SurahItemPreview & { revelation_type: "Madaniyah" | "Makkiyah" };
 
 const SurahCard: React.FC<SurahCardProps> = ({
   number,

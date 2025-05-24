@@ -15,7 +15,11 @@ const Footer = () => {
         </p>
         <p className="flex items-center justify-center gap-1">
           Made by <Icon name="heart" className="text-red-500" size={14} />
-          <Link href="#" className="underline">
+          <Link
+            href="https://github.com/balbaal/muslim-pocket"
+            target="_blank"
+            className="underline"
+          >
             Hamba Allah
           </Link>
         </p>

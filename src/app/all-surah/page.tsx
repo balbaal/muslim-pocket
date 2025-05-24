@@ -3,17 +3,16 @@
 import { usePathname } from "next/navigation";
 import Input from "@/components/Input";
 import Icon from "@/components/Icons";
-import SurahCard from "@/components/SurahCard";
 import { surahList } from "@/data/surah-list";
 import Stepper from "@/components/Stepper";
 import generateStepper from "@/lib/generateStepper";
-import { surahRevelation } from "@/data/surah-revelation";
 import { useState } from "react";
-import { SurahList as SurahListType } from "@/types/surah";
+import { SurahItemPreview } from "@/types/surah";
 import { clearString } from "@/lib/transformString";
+import ListView from "./ListView";
 
 const SurahList = () => {
-  const [surahListFiltered, setSurahListFiltered] = useState<SurahListType>(surahList);
+  const [surahListFiltered, setSurahListFiltered] = useState<SurahItemPreview[]>(surahList);
   const pathname = usePathname();
 
   const onHandleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -29,7 +28,7 @@ const SurahList = () => {
   };
 
   return (
-    <div className="px-4 py-4 flex flex-col gap-6">
+    <main className="p-4 flex flex-col gap-6">
       <div className="flex flex-col gap-4">
         <h1 className="text-2xl font-bold text-black flex items-center gap-2">
           📖 <span>Semua Surat</span>
@@ -43,23 +42,9 @@ const SurahList = () => {
         />
       </div>
       <div className="flex flex-col gap-2">
-        {surahListFiltered?.length > 0 ? (
-          surahListFiltered.map((surah) => (
-            <SurahCard
-              key={surah.number}
-              number={surah.number}
-              name={surah.name}
-              name_latin={surah.name_latin}
-              translation_name={surah.translation_name}
-              number_of_ayah={surah.number_of_ayah}
-              revelation_type={surahRevelation[surah.number]}
-            />
-          ))
-        ) : (
-          <p className="text-center text-gray-400">Tidak ada surat yang ditemukan.</p>
-        )}
+        <ListView surahList={surahListFiltered} />
       </div>
-    </div>
+    </main>
   );
 };
 

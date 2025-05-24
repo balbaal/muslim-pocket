@@ -1,4 +1,6 @@
-export const surahRevelation: Record<string, "Makkiyah" | "Madaniyah"> = {
+import { SurahRevelation } from "@/types/surah";
+
+export const surahRevelation: Record<string, SurahRevelation> = {
   "1": "Makkiyah",
   "2": "Madaniyah",
   "3": "Madaniyah",
