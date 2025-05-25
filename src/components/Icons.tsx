@@ -13,6 +13,8 @@ import HeartOutline from "@/assets/icons/heart-outline.svg";
 import Heart from "@/assets/icons/heart.svg";
 import Copy from "@/assets/icons/copy.svg";
 import Rocket from "@/assets/icons/rocket.svg";
+import Pin from "@/assets/icons/pin.svg";
+import PinOutline from "@/assets/icons/pin-outline.svg";
 // Update "union type IconName" & "interface IconComponent",
 // If you add new Icon SVG on "assets/icons/"
 
@@ -30,6 +32,8 @@ interface IconComponent {
   heart: React.ComponentType<React.SVGProps<SVGSVGElement>>;
   copy: React.ComponentType<React.SVGProps<SVGSVGElement>>;
   rocket: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  pin: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  "pin-outline": React.ComponentType<React.SVGProps<SVGSVGElement>>;
 }
 
 type IconName =
@@ -45,7 +49,9 @@ type IconName =
   | "heart-outline"
   | "heart"
   | "copy"
-  | "rocket";
+  | "rocket"
+  | "pin"
+  | "pin-outline";
 
 type IconProps = {
   name: IconName;
@@ -67,6 +73,8 @@ const icons: IconComponent = {
   heart: Heart,
   copy: Copy,
   rocket: Rocket,
+  pin: Pin,
+  "pin-outline": PinOutline,
 };
 
 const Icon: FC<IconProps> = ({ name, size = 16, className = "", ...props }) => {

@@ -40,6 +40,7 @@ const AyatCard: React.FC<AyatCardProps> = ({
             size={20}
             className="text-gray-600 cursor-pointer"
           />
+          <Icon onClick={() => {}} name="pin" size={20} className="text-gray-600 cursor-pointer" />
         </div>
         <p className="font-arabic mt-1 text-xl font-bold text-black border border-gray-300 bg-white rounded-full flex items-center justify-center w-8 h-8">
           {toArabicNumber(ayatNumber)}
