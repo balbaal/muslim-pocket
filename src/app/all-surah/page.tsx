@@ -6,17 +6,17 @@ import Icon from "@/components/Icons";
 import { surahList } from "@/data/surah-list";
 import Stepper from "@/components/Stepper";
 import generateStepper from "@/lib/generateStepper";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { SurahItemPreview } from "@/types/surah";
 import { clearString } from "@/lib/transformString";
+import { debounce } from "@/lib/utils";
 import ListView from "./ListView";
 
 const SurahList = () => {
   const [surahListFiltered, setSurahListFiltered] = useState<SurahItemPreview[]>(surahList);
   const pathname = usePathname();
 
-  const onHandleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const search = e.target.value;
+  const handleSearch = useCallback((search: string) => {
     const filteredSurahList = surahList.filter(
       (surah) =>
         clearString(surah.name_latin).toLowerCase().includes(clearString(search).toLowerCase()) ||
@@ -25,6 +25,12 @@ const SurahList = () => {
           .includes(clearString(search).toLowerCase())
     );
     setSurahListFiltered(filteredSurahList);
+  }, []);
+
+  const debouncedSearch = debounce(handleSearch, 500);
+
+  const onHandleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+    debouncedSearch(e.target.value);
   };
 
   return (
