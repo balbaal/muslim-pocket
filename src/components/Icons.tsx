@@ -15,6 +15,10 @@ import Copy from "@/assets/icons/copy.svg";
 import Rocket from "@/assets/icons/rocket.svg";
 import Pin from "@/assets/icons/pin.svg";
 import PinOutline from "@/assets/icons/pin-outline.svg";
+import Airplane from "@/assets/icons/airplane.svg";
+import AirplaneOutline from "@/assets/icons/airplane-outline.svg";
+import ArrowForward from "@/assets/icons/arrow-forward.svg";
+import CaretForward from "@/assets/icons/caret-forward.svg";
 // Update "union type IconName" & "interface IconComponent",
 // If you add new Icon SVG on "assets/icons/"
 
@@ -34,6 +38,10 @@ interface IconComponent {
   rocket: React.ComponentType<React.SVGProps<SVGSVGElement>>;
   pin: React.ComponentType<React.SVGProps<SVGSVGElement>>;
   "pin-outline": React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  airplane: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  "airplane-outline": React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  "arrow-forward": React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  "caret-forward": React.ComponentType<React.SVGProps<SVGSVGElement>>;
 }
 
 type IconName =
@@ -51,7 +59,11 @@ type IconName =
   | "copy"
   | "rocket"
   | "pin"
-  | "pin-outline";
+  | "pin-outline"
+  | "airplane"
+  | "airplane-outline"
+  | "arrow-forward"
+  | "caret-forward";
 
 type IconProps = {
   name: IconName;
@@ -75,6 +87,10 @@ const icons: IconComponent = {
   rocket: Rocket,
   pin: Pin,
   "pin-outline": PinOutline,
+  airplane: Airplane,
+  "airplane-outline": AirplaneOutline,
+  "arrow-forward": ArrowForward,
+  "caret-forward": CaretForward,
 };
 
 const Icon: FC<IconProps> = ({ name, size = 16, className = "", ...props }) => {

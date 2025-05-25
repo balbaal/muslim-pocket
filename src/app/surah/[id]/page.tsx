@@ -5,6 +5,8 @@ import { notFound } from "next/navigation";
 import ListView from "./ListView";
 import { SurahItem } from "@/types/surah";
 import { surahRevelation } from "@/data/surah-revelation";
+import Pagination from "@/components/Pagination";
+import { surahList } from "@/data/surah-list";
 
 async function getSurahData(id: string): Promise<SurahItem> {
   try {
@@ -37,11 +39,11 @@ const SurahDetail = async ({ params }: SurahDetailProps) => {
           revelation_type={surahRevelation[id]}
         />
       </section>
-      <div>Pagination Top</div>
+      <Pagination currentSurah={id} listSurah={surahList} />
       <article className="flex flex-col gap-2">
         <ListView surahData={surahData} />
       </article>
-      <div>Pagination Bottom</div>
+      <Pagination currentSurah={id} listSurah={surahList} />
     </main>
   );
 };
