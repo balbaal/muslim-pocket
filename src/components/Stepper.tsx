@@ -16,10 +16,14 @@ const Stepper = ({ steps = [] }: StepperProps) => {
     <div className="flex items-center">
       {steps.map((step, index) => {
         const isShowArrow = index < steps.length - 1;
+        const isLastStep = index === steps.length - 1;
 
         return (
           <div className="flex items-center text-black text-sm" key={index}>
-            <Link href={step.url} className="flex items-center gap-2">
+            <Link
+              href={step.url}
+              className={`flex items-center gap-2 ${isLastStep ? "underline" : ""}`}
+            >
               {step?.icon}
               <span>{step.label}</span>
             </Link>
