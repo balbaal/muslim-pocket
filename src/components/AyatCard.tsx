@@ -6,21 +6,26 @@ import Icon from "./Icons";
 
 export type OnClickCopyType = (event: React.MouseEvent<SVGSVGElement>) => void;
 export type OnClickShareType = (event: React.MouseEvent<SVGSVGElement>) => void;
+export type OnClickPinType = (event: React.MouseEvent<SVGSVGElement>) => void;
 
 export type AyatCardProps = {
   onClickCopy: OnClickCopyType;
   onClickShare: OnClickShareType;
+  onClickPin: OnClickPinType;
   ayatNumber: string;
   arabicText: string;
   translationText: string;
+  isCheckpoint: boolean;
 };
 
 const AyatCard: React.FC<AyatCardProps> = ({
   onClickCopy,
   onClickShare,
+  onClickPin,
   ayatNumber,
   arabicText,
   translationText,
+  isCheckpoint,
 }) => {
   return (
     <div className="bg-gray-50 rounded-lg p-4 hover:bg-gray-100 flex flex-col gap-4">
@@ -40,7 +45,12 @@ const AyatCard: React.FC<AyatCardProps> = ({
             size={20}
             className="text-gray-600 cursor-pointer"
           />
-          <Icon onClick={() => {}} name="pin" size={20} className="text-gray-600 cursor-pointer" />
+          <Icon
+            onClick={onClickPin}
+            name="pin"
+            size={20}
+            className={`text-gray-600 cursor-pointer ${isCheckpoint ? "text-orange-500" : ""}`}
+          />
         </div>
         <p className="font-arabic mt-1 text-xl font-bold text-black border border-gray-300 bg-white rounded-full flex items-center justify-center w-8 h-8">
           {toArabicNumber(ayatNumber)}
