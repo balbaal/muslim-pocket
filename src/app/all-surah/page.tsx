@@ -11,6 +11,7 @@ import { SurahItemPreview } from "@/types/surah";
 import { clearString } from "@/lib/transformString";
 import { debounce } from "@/lib/utils";
 import ListView from "./ListView";
+import Head from "next/head";
 
 const SurahList = () => {
   const [surahListFiltered, setSurahListFiltered] = useState<SurahItemPreview[]>(surahList);
@@ -35,6 +36,13 @@ const SurahList = () => {
 
   return (
     <main className="p-4 flex flex-col gap-6">
+      <Head>
+        <title>Muslim Pocket - List Surah</title>
+        <meta
+          name="description"
+          content="Lihat daftar lengkap surah Al-Qur\'an dengan nama, arti, dan jumlah ayat. Mudah dibaca dan diakses kapan saja."
+        />
+      </Head>
       <div className="flex flex-col gap-4">
         <h1 className="text-2xl font-bold text-black flex items-center gap-2">
           📖 <span>Semua Surat</span>

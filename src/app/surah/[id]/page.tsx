@@ -7,6 +7,7 @@ import { SurahItem } from "@/types/surah";
 import { surahRevelation } from "@/data/surah-revelation";
 import Pagination from "@/components/Pagination";
 import { surahList } from "@/data/surah-list";
+import Head from "next/head";
 
 async function getSurahData(id: string): Promise<SurahItem> {
   try {
@@ -25,6 +26,13 @@ const SurahDetail = async ({ params }: SurahDetailProps) => {
 
   return (
     <main className="p-4 flex flex-col gap-6">
+      <Head>
+        <title>Muslim Pocket - ${surahData?.name_latin}</title>
+        <meta
+          name="description"
+          content={`Baca Surah ${surahData?.name} (${surahData?.name_latin}) lengkap dengan teks Arab, latin, dan terjemahan bahasa Indonesia.`}
+        />
+      </Head>
       <section className="flex flex-col gap-4">
         <h1 className="text-2xl font-bold text-black flex items-center gap-2">
           📖 <span>Baca per Surat</span>
