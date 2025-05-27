@@ -4,7 +4,7 @@ import Icon from "./Icons";
 
 const Footer = () => {
   return (
-    <footer className="bg-white p-4 mt-8">
+    <footer className="bg-white p-4">
       <div className="container mx-auto px-4 text-center text-black text-sm">
         <p>
           &copy; {new Date().getFullYear()}{" "}

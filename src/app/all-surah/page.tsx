@@ -34,7 +34,7 @@ const SurahList = () => {
   };
 
   return (
-    <main className="p-4 flex flex-col gap-6">
+    <main className="p-4 flex flex-col gap-6 w-full">
       <div className="flex flex-col gap-4">
         <h1 className="text-2xl font-bold text-black flex items-center gap-2">
           📖 <span>Semua Surat</span>
