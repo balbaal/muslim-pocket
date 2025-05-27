@@ -10,11 +10,11 @@ const SidebarContainer = () => {
   return (
     <>
       <div
-        className={`duration-300 ease-in-out fixed inset-0 bg-black z-20 opacity-50 ${isMenuOpen ? "translate-0" : "-translate-x-full"}`}
+        className={`duration-500 ease-in-out fixed inset-0 bg-black z-20 opacity-50 ${isMenuOpen ? "translate-0" : "-translate-x-full"}`}
         onClick={closeMenu}
       />
       <div
-        className={`w-[280px] h-full bg-white z-30 fixed transition-all duration-300 ease-in-out ${isMenuOpen ? "translate-x-0" : "-translate-x-full"}`}
+        className={`w-[280px] h-full bg-gray-100 shadow-xl z-30 fixed transition-all duration-500 ease-in-out ${isMenuOpen ? "translate-x-0" : "-translate-x-full"}`}
       >
         <Sidebar />
       </div>
