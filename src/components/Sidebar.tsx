@@ -14,11 +14,11 @@ const Sidebar = () => {
       label: "Beranda",
       icon: "home-outline" as const,
     },
-    {
-      href: "/settings",
-      label: "Setelan",
-      icon: "settings-outline" as const,
-    },
+    // {
+    //   href: "/settings",
+    //   label: "Setelan",
+    //   icon: "settings-outline" as const,
+    // },
     {
       href: "/about",
       label: "Tentang",
