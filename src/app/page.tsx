@@ -46,7 +46,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="px-4 pt-4 flex flex-col gap-6">
+    <main className="px-4 pt-4 flex flex-col gap-6 w-full">
       <section>
         <h2 className="font-bold text-lg flex items-center gap-2 text-black mb-4">
           <span>📌</span>
@@ -102,7 +102,7 @@ const Home = () => {
           ))}
         </div>
       </section>
-    </div>
+    </main>
   );
 };
 

@@ -35,10 +35,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${arabicFont.variable} antialiased`}
       >
-        <section className="flex min-h-screen">
+        <section className="w-full max-w-[500px] mx-auto bg-white shadow-xl">
           <SidebarContainer />
-          <div className="overflow-y-auto w-full max-w-[500px] mx-auto h-screen bg-white shadow-xl min-h-screen">
-            <Header />
+          <Header />
+          <div className="flex flex-col gap-8 items-center justify-between min-h-[calc(100vh-53px)]">
             {children}
             <Footer />
           </div>
