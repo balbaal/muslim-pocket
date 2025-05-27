@@ -4,6 +4,7 @@ import Icon from "@/components/Icons";
 import features from "@/data/features";
 import { getCheckpoint } from "@/lib/storage";
 import { SurahCheckPoint } from "@/types/checkpoint";
+import Head from "next/head";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
@@ -47,6 +48,13 @@ const Home = () => {
 
   return (
     <div className="px-4 pt-4 flex flex-col gap-6">
+      <Head>
+        <title>Muslim Pocket - Home</title>
+        <meta
+          name="description"
+          content="Muslim Pocket adalah aplikasi Al-Qur\'an digital dengan tampilan modern, fitur pencarian, dan akses mudah ke surah dan ayat harian."
+        />
+      </Head>
       <section>
         <h2 className="font-bold text-lg flex items-center gap-2 text-black mb-4">
           <span>📌</span>
