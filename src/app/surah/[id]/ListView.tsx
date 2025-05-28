@@ -6,6 +6,7 @@ import AyatCard from "@/components/AyatCard";
 import { SurahItem } from "@/types/surah";
 import { SurahCheckPoint } from "@/types/checkpoint";
 import { setCheckpoint, getCheckpoint } from "@/lib/storage";
+import { toast } from "@/store/toastStore";
 
 interface ListViewProps {
   surahData: SurahItem;
@@ -30,6 +31,11 @@ const ListView = ({ surahData }: ListViewProps) => {
   const handleOnClickPin = (checkpointData: SurahCheckPoint) => {
     setCheckpointData(checkpointData);
     setCheckpoint(checkpointData);
+
+    toast({
+      type: "info",
+      message: `Berhasil pin Surat <strong>${checkpointData.name_latin}</strong> Ayat <strong>${checkpointData.ayah_number}</strong> sebagai terakhir dibaca!`,
+    });
   };
 
   useEffect(() => {
