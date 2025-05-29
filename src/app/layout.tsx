@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SidebarContainer from "@/components/SidebarContainer";
+import ToastContainer from "@/components/toast/ToastContainer";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Noto_Naskh_Arabic } from "next/font/google";
 import "./globals.css";
@@ -43,6 +44,7 @@ export default function RootLayout({
             <Footer />
           </div>
         </section>
+        <ToastContainer />
       </body>
     </html>
   );
