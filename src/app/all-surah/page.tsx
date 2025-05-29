@@ -78,7 +78,7 @@ const SurahList = () => {
         <ListView surahList={displayedSurahs} isSearching={!!search} />
         {hasMore && (
           <div ref={ref} className="py-4 text-center">
-            <p className="text-gray-500">Loading more surat...</p>
+            <p className="text-gray-500">Memuat surat lainnya...</p>
           </div>
         )}
       </div>
