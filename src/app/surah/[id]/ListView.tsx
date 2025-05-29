@@ -12,10 +12,6 @@ interface ListViewProps {
 }
 
 const ListView = ({ surahData }: ListViewProps) => {
-  const [currentScroll, setCurrentScroll] = useState<number>(0);
-
-  console.log(currentScroll);
-
   const [checkpointData, setCheckpointData] = useState<SurahCheckPoint | null>(null);
   const ayahRefs = useRef<Record<string, HTMLDivElement>>({});
 
@@ -51,17 +47,6 @@ const ListView = ({ surahData }: ListViewProps) => {
       setCheckpointData(checkpoint);
     }
   }, []);
-
-  useEffect(() => {
-    const handleScroll = () => setCurrentScroll(window.scrollY);
-    window.addEventListener("scroll", handleScroll);
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  console.log(currentScroll);
-
-  if (currentScroll > 10000) console.log("show back to top");
 
   return Object.entries(surahData.text).map(([number, text]) => {
     const isCheckpoint =
