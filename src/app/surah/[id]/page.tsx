@@ -7,6 +7,7 @@ import { SurahItem } from "@/types/surah";
 import { surahRevelation } from "@/data/surah-revelation";
 import Pagination from "@/components/Pagination";
 import { surahList } from "@/data/surah-list";
+import BackToTopContainer from "@/components/backToTop/BackToTopContainer";
 
 async function getSurahData(id: string): Promise<SurahItem> {
   try {
@@ -44,6 +45,7 @@ const SurahDetail = async ({ params }: SurahDetailProps) => {
         <ListView surahData={surahData} />
       </article>
       <Pagination currentSurah={id} listSurah={surahList} />
+      <BackToTopContainer />
     </main>
   );
 };
