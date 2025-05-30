@@ -20,7 +20,8 @@ export const useToastStore = create<ToastState>((set) => ({
     const id = Date.now();
 
     set((state) => {
-      if (state?.toasts?.length < 3) {
+      // Maximum 1 toast only
+      if (state?.toasts?.length < 1) {
         return {
           toasts: [...state?.toasts, { id, ...toast }],
         };
@@ -35,7 +36,7 @@ export const useToastStore = create<ToastState>((set) => ({
       set((state) => ({
         toasts: state.toasts.filter((t) => t.id !== id),
       }));
-    }, 3000);
+    }, 1500);
   },
 }));
 
