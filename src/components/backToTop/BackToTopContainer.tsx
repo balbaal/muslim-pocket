@@ -23,7 +23,7 @@ const BackToTopContainer = () => {
   if (currentScroll < 10000) return null;
 
   return (
-    <div className="fixed z-50 right-4 bottom-4 bg-orange-500 rounded-full p-3 flex items-center justify-center transition-all duration-500 animate-slide-up">
+    <div className="fixed z-50 right-4 bottom-25 sm:bottom-16 bg-orange-500 rounded-full p-3 flex items-center justify-center transition-all duration-500 animate-slide-up">
       <BackToTopView handleOnClick={handleScrollTop} />
     </div>
   );
