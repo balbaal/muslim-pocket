@@ -2,12 +2,12 @@ import Stepper from "@/components/Stepper";
 import SurahCard from "@/components/SurahCard";
 import generateStepper from "@/lib/generateStepper";
 import { notFound } from "next/navigation";
-import ListView from "./ListView";
 import { SurahItem } from "@/types/surah";
 import { surahRevelation } from "@/data/surah-revelation";
 import Pagination from "@/components/Pagination";
 import { surahList } from "@/data/surah-list";
 import BackToTopContainer from "@/components/backToTop/BackToTopContainer";
+import ContainerListView from "./ContainerListView";
 
 async function getSurahData(id: string): Promise<SurahItem> {
   try {
@@ -41,9 +41,7 @@ const SurahDetail = async ({ params }: SurahDetailProps) => {
         />
       </section>
       <Pagination currentSurah={id} listSurah={surahList} />
-      <article className="flex flex-col gap-2">
-        <ListView surahData={surahData} />
-      </article>
+      <ContainerListView surahData={surahData} />
       <Pagination currentSurah={id} listSurah={surahList} />
       <BackToTopContainer />
     </main>

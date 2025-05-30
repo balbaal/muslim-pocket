@@ -7,12 +7,14 @@ import { SurahItem } from "@/types/surah";
 import { SurahCheckPoint } from "@/types/checkpoint";
 import { setCheckpoint, getCheckpoint } from "@/lib/storage";
 import { toast } from "@/store/toastStore";
+import { VerseItem } from "@/types/verse";
 
 interface ListViewProps {
   surahData: SurahItem;
+  verseList: VerseItem[];
 }
 
-const ListView = ({ surahData }: ListViewProps) => {
+const ListView = ({ surahData, verseList }: ListViewProps) => {
   const [checkpointData, setCheckpointData] = useState<SurahCheckPoint | null>(null);
   const ayahRefs = useRef<Record<string, HTMLDivElement>>({});
 
@@ -39,48 +41,48 @@ const ListView = ({ surahData }: ListViewProps) => {
   };
 
   useEffect(() => {
-    if (ayahCheckpoint) {
-      const element = ayahRefs.current[ayahCheckpoint];
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
-      }
-    }
-  }, [ayahCheckpoint]);
-
-  useEffect(() => {
     const checkpoint = getCheckpoint();
     if (checkpoint) {
       setCheckpointData(checkpoint);
     }
   }, []);
 
-  return Object.entries(surahData.text).map(([number, text]) => {
+  useEffect(() => {
+    if (ayahCheckpoint) {
+      const element = ayahRefs.current[ayahCheckpoint];
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [ayahCheckpoint, verseList]);
+
+  return verseList.map((verse) => {
     const isCheckpoint =
-      surahData?.number === checkpointData?.number && number === checkpointData?.ayah_number;
+      surahData?.number === checkpointData?.number && verse.number === checkpointData?.ayah_number;
     return (
       <div
-        key={number}
+        key={verse.number}
         ref={(el) => {
           if (el) {
-            ayahRefs.current[number] = el;
+            ayahRefs.current[verse.number] = el;
           }
         }}
       >
         <AyatCard
-          onClickCopy={() => handleOnClickCopy(number, surahData)}
+          onClickCopy={() => handleOnClickCopy(verse.number, surahData)}
           onClickShare={() => handleOnClickShare(surahData.number)}
           onClickPin={() =>
             handleOnClickPin({
               name: surahData.name,
               name_latin: surahData.name_latin,
               number: surahData.number,
-              ayah_number: number,
+              ayah_number: verse.number,
               timestamp: new Date().toISOString(),
             })
           }
-          ayatNumber={number}
-          arabicText={text}
-          translationText={surahData.translations.id.text[number]}
+          ayatNumber={verse.number}
+          arabicText={verse.text}
+          translationText={verse.translation}
           isCheckpoint={isCheckpoint}
         />
       </div>
