@@ -3,8 +3,14 @@ import { SurahItemPreview } from "@/types/surah";
 import SurahCard from "@/components/SurahCard";
 import { surahRevelation } from "@/data/surah-revelation";
 
-const ListView = ({ surahList }: { surahList: SurahItemPreview[] }) => {
-  if (surahList.length === 0) {
+const ListView = ({
+  surahList,
+  isSearching,
+}: {
+  surahList: SurahItemPreview[];
+  isSearching: boolean;
+}) => {
+  if (surahList.length === 0 && isSearching) {
     return <p className="text-center text-gray-400">Tidak ada surat yang ditemukan.</p>;
   }
 

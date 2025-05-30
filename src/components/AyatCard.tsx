@@ -52,7 +52,7 @@ const AyatCard: React.FC<AyatCardProps> = ({
             className={`text-gray-600 cursor-pointer ${isCheckpoint ? "text-orange-500" : ""}`}
           />
         </div>
-        <p className="font-arabic mt-1 text-xl font-bold text-black border border-gray-300 bg-white rounded-full flex items-center justify-center w-8 h-8">
+        <p className="select-none font-arabic mt-1 text-xl font-bold text-black border border-gray-300 bg-white rounded-full flex items-center justify-center w-8 h-8">
           {toArabicNumber(ayatNumber)}
         </p>
       </div>
