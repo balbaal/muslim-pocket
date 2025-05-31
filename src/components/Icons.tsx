@@ -19,6 +19,8 @@ import Airplane from "@/assets/icons/airplane.svg";
 import AirplaneOutline from "@/assets/icons/airplane-outline.svg";
 import ArrowForward from "@/assets/icons/arrow-forward.svg";
 import CaretForward from "@/assets/icons/caret-forward.svg";
+import AlarmOutline from "@/assets/icons/alarm-outline.svg";
+import Alarm from "@/assets/icons/alarm.svg";
 // Update "union type IconName" & "interface IconComponent",
 // If you add new Icon SVG on "assets/icons/"
 
@@ -42,6 +44,8 @@ interface IconComponent {
   "airplane-outline": React.ComponentType<React.SVGProps<SVGSVGElement>>;
   "arrow-forward": React.ComponentType<React.SVGProps<SVGSVGElement>>;
   "caret-forward": React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  "alarm-outline": React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  alarm: React.ComponentType<React.SVGProps<SVGSVGElement>>;
 }
 
 type IconName =
@@ -63,7 +67,9 @@ type IconName =
   | "airplane"
   | "airplane-outline"
   | "arrow-forward"
-  | "caret-forward";
+  | "caret-forward"
+  | "alarm-outline"
+  | "alarm";
 
 type IconProps = {
   name: IconName;
@@ -91,6 +97,8 @@ const icons: IconComponent = {
   "airplane-outline": AirplaneOutline,
   "arrow-forward": ArrowForward,
   "caret-forward": CaretForward,
+  "alarm-outline": AlarmOutline,
+  alarm: Alarm,
 };
 
 const Icon: FC<IconProps> = ({ name, size = 16, className = "", ...props }) => {

@@ -8,6 +8,12 @@ const features: Features[] = [
     link: "/all-surah",
   },
   {
+    id: 6,
+    icon: "⏰",
+    title: "Jadwal Sholat",
+    link: "/jadwal-sholat",
+  },
+  {
     id: 2,
     icon: "🕊️",
     title: "Tasbih",
@@ -29,12 +35,6 @@ const features: Features[] = [
     id: 5,
     icon: "📜",
     title: "Juz Amma",
-    link: "/all-surah",
-  },
-  {
-    id: 6,
-    icon: "⏰",
-    title: "Jadwal Sholat",
     link: "/all-surah",
   },
 ];
