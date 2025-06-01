@@ -68,6 +68,7 @@ const PrayerFetcher = () => {
       mappingPrayerSchedule(data?.data || []);
       setIsloadingPrayer(false);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isLoading]);
 
   return null;
