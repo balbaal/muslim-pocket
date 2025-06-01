@@ -1,68 +1,41 @@
 import { create } from "zustand";
 
-interface Prayer {
+export interface Prayer {
   name: string;
   time: string;
+  timestamps: string;
 }
 
-interface PrayerDate {
-  date: string;
+export interface PrayerDate {
+  weekday: string;
+  readableDate: string;
+  date: {
+    day: number;
+    month: number;
+    year: number;
+  };
+  timestamps: string;
   prayerTime: Prayer[];
 }
 
 interface PrayerState {
+  timeZone: string;
   prayerSchedule: PrayerDate[];
   nextPrayer: Prayer | null;
+  isLoadingPrayer: boolean;
   setPrayerSchedule: (data: PrayerDate[]) => void;
   setNextPrayer: (prayer: Prayer) => void;
+  setTimeZone: (timeZone: string) => void;
+  setIsloadingPrayer: (isLoadingPrayer: boolean) => void;
 }
 
-const PRAY_SCHEDULE_DUMMY: PrayerDate[] = [
-  {
-    date: "01-05-2025",
-    prayerTime: [
-      { name: "Subuh", time: "05:01" },
-      { name: "Dzuhur", time: "12:04" },
-      { name: "Ashar", time: "15:11" },
-      { name: "Magrib", time: "17:58" },
-      { name: "Isya", time: "19:32" },
-    ],
-  },
-  {
-    date: "02-05-2025",
-    prayerTime: [
-      { name: "Subuh", time: "05:01" },
-      { name: "Dzuhur", time: "12:04" },
-      { name: "Ashar", time: "15:11" },
-      { name: "Magrib", time: "17:58" },
-      { name: "Isya", time: "19:32" },
-    ],
-  },
-  {
-    date: "03-05-2025",
-    prayerTime: [
-      { name: "Subuh", time: "05:01" },
-      { name: "Dzuhur", time: "12:04" },
-      { name: "Ashar", time: "15:11" },
-      { name: "Magrib", time: "17:58" },
-      { name: "Isya", time: "19:32" },
-    ],
-  },
-  {
-    date: "04-05-2025",
-    prayerTime: [
-      { name: "Subuh", time: "05:01" },
-      { name: "Dzuhur", time: "12:04" },
-      { name: "Ashar", time: "15:11" },
-      { name: "Magrib", time: "17:58" },
-      { name: "Isya", time: "19:32" },
-    ],
-  },
-];
-
 export const usePrayerStore = create<PrayerState>((set) => ({
-  prayerSchedule: PRAY_SCHEDULE_DUMMY,
-  nextPrayer: { name: "Dzuhur", time: "12:08" },
+  timeZone: "",
+  prayerSchedule: [],
+  nextPrayer: { name: "Pelipur Resah", time: "00:00", timestamps: "" },
+  isLoadingPrayer: true,
   setPrayerSchedule: (data) => set({ prayerSchedule: data }),
   setNextPrayer: (prayer) => set({ nextPrayer: prayer }),
+  setTimeZone: (timeZone) => set({ timeZone }),
+  setIsloadingPrayer: (isLoadingPrayer) => set({ isLoadingPrayer }),
 }));
