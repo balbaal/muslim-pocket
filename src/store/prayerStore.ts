@@ -32,7 +32,7 @@ interface PrayerState {
 export const usePrayerStore = create<PrayerState>((set) => ({
   timeZone: "",
   prayerSchedule: [],
-  nextPrayer: { name: "Pelipur Resah", time: "00:00", timestamps: "" },
+  nextPrayer: { name: "Menghadap Allah", time: "00:00", timestamps: "" },
   isLoadingPrayer: true,
   setPrayerSchedule: (data) => set({ prayerSchedule: data }),
   setNextPrayer: (prayer) => set({ nextPrayer: prayer }),

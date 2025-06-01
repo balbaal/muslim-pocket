@@ -28,7 +28,9 @@ const AyatCard: React.FC<AyatCardProps> = ({
   isCheckpoint,
 }) => {
   return (
-    <div className="bg-gray-50 rounded-lg p-4 hover:bg-gray-100 flex flex-col gap-4">
+    <div
+      className={`bg-gray-50 rounded-lg p-4 hover:bg-gray-100 flex flex-col gap-4 ${isCheckpoint ? "bg-green-100 border border-green-500 hover:bg-green-100" : ""}`}
+    >
       <p className="text-right text-black font-arabic font-bold text-2xl">{arabicText}</p>
       <em className="text-xs text-black">{translationText}</em>
       <div className="flex justify-between items-center">
@@ -49,7 +51,7 @@ const AyatCard: React.FC<AyatCardProps> = ({
             onClick={onClickPin}
             name="pin"
             size={20}
-            className={`text-gray-600 cursor-pointer ${isCheckpoint ? "text-orange-500" : ""}`}
+            className="text-gray-600 cursor-pointer"
           />
         </div>
         <p className="select-none font-arabic mt-1 text-xl font-bold text-black border border-gray-300 bg-white rounded-full flex items-center justify-center w-8 h-8">

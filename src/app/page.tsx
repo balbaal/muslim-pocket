@@ -11,7 +11,7 @@ const Home = () => {
   const [checkpoint, setCheckpoint] = useState<SurahCheckPoint | null>(null);
 
   const handleClickPlayAyah = () => {
-    alert("Available Soon 🔥");
+    alert("Dengarkan kutipan Ayat akan tersedia segera 🔥");
   };
 
   const generateCheckpointCard = (checkpoint: SurahCheckPoint | null) => {
@@ -59,17 +59,17 @@ const Home = () => {
       <section>
         <h2 className="font-bold text-lg flex items-center gap-2 text-black mb-4">
           <span>🎶</span>
-          Ayat Hari Ini
+          Kutipan Ayat
         </h2>
         <div className="flex flex-col gap-2 shadow rounded-lg p-4 bg-gray-100 text-black">
           <div className="flex flex-col gap-2">
             <p className="text-right text-2xl">
-              اٰمَنُوْا قُوْٓا اَنْفُسَكُمْ وَاَهْلِيْكُمْ نَارًا وَّقُوْدُهَا النَّاسُ
-              وَالْحِجَارَةُ عَلَيْهَا مَلٰۤىِٕكَةٌ
+              وَاسْتَعِيْنُوْا بِالصَّبْرِ وَالصَّلٰوةِ ۗ وَاِنَّهَا لَكَبِيْرَةٌ اِلَّا عَلَى
+              الْخٰشِعِيْنَۙ
             </p>
             <p className="italic text-sm">
-              &quot;Wahai Nabi! Mengapa engkau mengharamkan apa yang dihalalkan Allah bagimu? Engkau
-              ingin menyenangkan hati istri-istrimu? Dan Allah Maha Pengampun, Maha Penyayang.&quot;
+              &quot;Dan mohonlah pertolongan (kepada Allah) dengan sabar dan salat. Dan (salat) itu
+              sungguh berat, kecuali bagi orang-orang yang khusyuk,&quot;
             </p>
           </div>
           <div className="flex justify-end">
