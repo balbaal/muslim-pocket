@@ -3,6 +3,8 @@ import Footer from "@/components/Footer";
 import SidebarContainer from "@/components/SidebarContainer";
 import ToastContainer from "@/components/toast/ToastContainer";
 import PrayerFloating from "@/components/prayer/PrayerFloating";
+import PrayerFetcher from "@/components/prayer/PrayerFetcher";
+import QueryProvider from "./providers/queryProvider";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Noto_Naskh_Arabic } from "next/font/google";
 import "./globals.css";
@@ -37,16 +39,19 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${arabicFont.variable} antialiased`}
       >
-        <section className="w-full max-w-[500px] mx-auto bg-white shadow-xl">
-          <SidebarContainer />
-          <Header />
-          <PrayerFloating />
-          <div className="flex flex-col gap-8 items-center justify-between min-h-[calc(100vh-53px)]">
-            {children}
-            <Footer />
-          </div>
-        </section>
-        <ToastContainer />
+        <QueryProvider>
+          <PrayerFetcher />
+          <section className="w-full max-w-[500px] mx-auto bg-white shadow-xl">
+            <SidebarContainer />
+            <Header />
+            <PrayerFloating />
+            <div className="flex flex-col gap-8 items-center justify-between min-h-[calc(100vh-53px)]">
+              {children}
+              <Footer />
+            </div>
+          </section>
+          <ToastContainer />
+        </QueryProvider>
       </body>
     </html>
   );
