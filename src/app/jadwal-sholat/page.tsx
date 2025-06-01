@@ -15,7 +15,7 @@ const PrayerSchedule = () => {
         </h1>
         {!!timeZone && (
           <div className="text-gray-400 flex text-sm">
-            <p className="ml-8">Jakarta/Asia</p>
+            <p className="ml-8">{timeZone}</p>
           </div>
         )}
       </div>
