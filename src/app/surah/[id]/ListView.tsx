@@ -22,11 +22,17 @@ const ListView = ({ surahData, verseList }: ListViewProps) => {
   const ayahCheckpoint = searchParam.get("ayah");
 
   const handleOnClickCopy = (ayatNumber: string, surahData: SurahItem) => {
-    console.log(">>> Handle Copy . . .", ayatNumber);
-    console.log(">>> Handle Copy . . .", surahData);
+    navigator.clipboard.writeText(
+      `${surahData.text[ayatNumber]} - ${surahData.translations.id.text[ayatNumber]} (${surahData.number}:${ayatNumber})`
+    );
+    toast({
+      type: "info",
+      message: `Berhasil menyalin ayat <strong>${ayatNumber}</strong> dari surat <strong>${surahData.name_latin}</strong>`,
+    });
   };
 
   const handleOnClickShare = (value: string) => {
+    alert("Bagikan Ayat akan tersedia segera 🔥");
     console.log(">>> Handle Share . . .", value);
   };
 
