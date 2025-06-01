@@ -11,7 +11,7 @@ const Home = () => {
   const [checkpoint, setCheckpoint] = useState<SurahCheckPoint | null>(null);
 
   const handleClickPlayAyah = () => {
-    alert("Play !!!");
+    alert("Available Soon 🔥");
   };
 
   const generateCheckpointCard = (checkpoint: SurahCheckPoint | null) => {
