@@ -20,7 +20,7 @@ const Sidebar = () => {
     //   icon: "settings-outline" as const,
     // },
     {
-      href: "/about",
+      href: "/tentang",
       label: "Tentang",
       icon: "alert-circle-outline" as const,
     },

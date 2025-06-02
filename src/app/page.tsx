@@ -17,7 +17,7 @@ const Home = () => {
   const generateCheckpointCard = (checkpoint: SurahCheckPoint | null) => {
     if (!checkpoint) {
       return (
-        <Link href="/all-surah" className="flex items-center justify-between">
+        <Link href="/semua-surah" className="flex items-center justify-between">
           <p>Belum ada, Ayo mulai baca Surah 🔥</p>
           <Icon name="arrow-forward" size={20} />
         </Link>

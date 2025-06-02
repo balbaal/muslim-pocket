@@ -11,7 +11,7 @@ const ListView = ({
   isSearching: boolean;
 }) => {
   if (surahList.length === 0 && isSearching) {
-    return <p className="text-center text-gray-400">Tidak ada surat yang ditemukan.</p>;
+    return <p className="text-center text-gray-400">Tidak ada surah yang ditemukan.</p>;
   }
 
   return surahList.map((surah) => (
