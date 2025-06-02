@@ -27,7 +27,7 @@ const ListView = ({ surahData, verseList }: ListViewProps) => {
     );
     toast({
       type: "info",
-      message: `Berhasil menyalin ayat <strong>${ayatNumber}</strong> dari surat <strong>${surahData.name_latin}</strong>`,
+      message: `Berhasil menyalin ayat <strong>${ayatNumber}</strong> dari surah <strong>${surahData.name_latin}</strong>`,
     });
   };
 
@@ -42,7 +42,7 @@ const ListView = ({ surahData, verseList }: ListViewProps) => {
 
     toast({
       type: "info",
-      message: `Berhasil pin Surat <strong>${checkpointData.name_latin}</strong> Ayat <strong>${checkpointData.ayah_number}</strong> sebagai terakhir dibaca!`,
+      message: `Berhasil pin Surah <strong>${checkpointData.name_latin}</strong> Ayat <strong>${checkpointData.ayah_number}</strong> sebagai terakhir dibaca!`,
     });
   };
 

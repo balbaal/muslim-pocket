@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 
-const about = () => {
+const About = () => {
   return (
     <div className="w-full p-4 flex flex-col gap-4">
       <h1 className="text-2xl font-bold text-black flex items-center gap-2">
@@ -87,4 +87,4 @@ const about = () => {
   );
 };
 
-export default about;
+export default About;

@@ -3,9 +3,9 @@ import { Step } from "@/types/step";
 
 const generateStepper = (path: string) => {
   const mappingPath: Record<string, Step[]> = {
-    "/all-surah": [
+    "/semua-surah": [
       { label: "Beranda", url: "/" },
-      { label: "Semua Surat", url: "/all-surah" },
+      { label: "Semua Surah", url: "/semua-surah" },
     ],
   };
 
@@ -17,7 +17,7 @@ const generateStepper = (path: string) => {
 
     return [
       { label: "Beranda", url: "/" },
-      { label: "Semua Surat", url: "/all-surah" },
+      { label: "Semua Surah", url: "/semua-surah" },
       { label: surah?.name_latin || "-", url: `/surah/${number}` },
     ];
   }

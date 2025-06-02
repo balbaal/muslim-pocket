@@ -64,13 +64,13 @@ const SurahList = () => {
     <main className="p-4 flex flex-col gap-6 w-full">
       <div className="flex flex-col gap-4">
         <h1 className="text-2xl font-bold text-black flex items-center gap-2">
-          📖 <span>Semua Surat</span>
+          📖 <span>Semua Surah</span>
         </h1>
         <Stepper steps={generateStepper(pathname)} />
         <Input
           type="text"
           prefix={<Icon name="search-outline" className="text-black" size={20} />}
-          placeholder="Cari surat apa ?"
+          placeholder="Cari surah apa ?"
           onChange={onHandleSearch}
         />
       </div>
@@ -78,7 +78,7 @@ const SurahList = () => {
         <ListView surahList={displayedSurahs} isSearching={!!search} />
         {hasMore && (
           <div ref={ref} className="py-4 text-center">
-            <p className="text-gray-500">Memuat surat lainnya...</p>
+            <p className="text-gray-500">Memuat surah lainnya...</p>
           </div>
         )}
       </div>

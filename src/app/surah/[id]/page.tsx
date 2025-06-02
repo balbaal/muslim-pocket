@@ -42,7 +42,7 @@ const SurahDetail = () => {
     <main className="p-4 flex flex-col gap-6 w-full">
       <section className="flex flex-col gap-4">
         <h1 className="text-2xl font-bold text-black flex items-center gap-2">
-          📖 <span>Baca per Surat</span>
+          📖 <span>Baca per Surah</span>
         </h1>
         <Stepper steps={generateStepper(`/surah/${params.id}`)} />
         <SurahCard
