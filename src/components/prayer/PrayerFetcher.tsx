@@ -20,12 +20,25 @@ const PrayerFetcher = () => {
       (item) => Number(item.timestamps) > date.getTime()
     );
 
-    if (!!nextPrayer?.name) {
+    if (nextPrayer?.name) {
       setNextPrayer({
         name: nextPrayer.name,
-        time: nextPrayer?.time,
+        time: nextPrayer.time,
         timestamps: nextPrayer.timestamps,
       });
+    } else {
+      // If no next prayer found today (after Isha), get tomorrow's Fajr
+      const tomorrowDay = date.getDate() + 1;
+      const prayerTomorrow = result.find((item) => item.date.day === tomorrowDay);
+      const fajrTomorrow = prayerTomorrow?.prayerTime.find((item) => item.name === "Fajr");
+
+      if (fajrTomorrow) {
+        setNextPrayer({
+          name: fajrTomorrow.name,
+          time: fajrTomorrow.time,
+          timestamps: fajrTomorrow.timestamps,
+        });
+      }
     }
   };
 
