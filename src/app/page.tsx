@@ -1,50 +1,10 @@
-"use client";
-
-import Icon from "@/components/Icons";
+import React from "react";
 import features from "@/data/features";
-import { getCheckpoint } from "@/lib/storage";
-import { SurahCheckPoint } from "@/types/checkpoint";
+import CheckpointCard from "@/views/CheckpointCard";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import ButtonPlayAyat from "@/views/ButtonPlayAyat";
 
 const Home = () => {
-  const [checkpoint, setCheckpoint] = useState<SurahCheckPoint | null>(null);
-
-  const handleClickPlayAyah = () => {
-    alert("Dengarkan kutipan Ayat akan tersedia segera 🔥");
-  };
-
-  const generateCheckpointCard = (checkpoint: SurahCheckPoint | null) => {
-    if (!checkpoint) {
-      return (
-        <Link href="/semua-surah" className="flex items-center justify-between">
-          <p>Belum ada, Ayo mulai baca Surah 🔥</p>
-          <Icon name="arrow-forward" size={20} />
-        </Link>
-      );
-    }
-
-    return (
-      <Link
-        href={`/surah/${checkpoint.number}?ayah=${checkpoint.ayah_number}`}
-        className="flex items-center justify-between"
-      >
-        <div className="flex flex-col">
-          <p className="text-2xl font-arabic font-bold">{checkpoint.name}</p>
-          <p className="text-sm">
-            {checkpoint.name_latin} ({checkpoint.number}:{checkpoint.ayah_number})
-          </p>
-        </div>
-        <Icon name="arrow-forward" size={20} />
-      </Link>
-    );
-  };
-
-  useEffect(() => {
-    const checkpoint = getCheckpoint();
-    setCheckpoint(checkpoint);
-  }, []);
-
   return (
     <main className="px-4 pt-4 flex flex-col gap-6 w-full">
       <section>
@@ -52,9 +12,7 @@ const Home = () => {
           <span>📌</span>
           Surah Terakhir Dibaca
         </h2>
-        <div className="flex flex-col gap-2 shadow rounded-lg p-4 bg-gray-100 text-black">
-          {generateCheckpointCard(checkpoint)}
-        </div>
+        <CheckpointCard />
       </section>
       <section>
         <h2 className="font-bold text-lg flex items-center gap-2 text-black mb-4">
@@ -73,13 +31,7 @@ const Home = () => {
             </p>
           </div>
           <div className="flex justify-end">
-            <button
-              onClick={handleClickPlayAyah}
-              className="cursor-pointer p-3 bg-white shadow rounded-full"
-              aria-label="button-play"
-            >
-              <Icon name="play" className="text-black" />
-            </button>
+            <ButtonPlayAyat />
           </div>
         </div>
       </section>
