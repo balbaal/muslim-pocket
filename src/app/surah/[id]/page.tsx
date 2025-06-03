@@ -1,11 +1,40 @@
 import React from "react";
 import PageClient from "./PageClient";
 import { Metadata } from "next";
+import { notFound } from "next/navigation";
+import { SurahItem } from "@/types/surah";
+import { createOGMeta } from "@/lib/ogMeta";
 
-export const metadata: Metadata = {
-  title: "Muslim Pocket - Baca per Surah",
-  description: "Baca per Surah",
+type Props = {
+  params: Promise<{ id: string }>;
 };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { id } = await params;
+  let surahData: SurahItem = {} as SurahItem;
+
+  try {
+    const response = await import(`@/data/surah/${id}.ts`);
+    surahData = response.default;
+  } catch (error) {
+    console.log(">>> error:", error);
+    notFound();
+  }
+
+  const metadataTitle = `Surah ${surahData.name_latin} - Teks Arab, Latin & Terjemahan | Muslim Pocket`;
+  const metadataDescription = `Baca Surah ${surahData.name_latin} lengkap dengan teks Arab, latin, dan terjemahan bahasa Indonesia. Dilengkapi nomor ayat dan tampilan bersih.`;
+
+  return {
+    title: metadataTitle,
+    description: metadataDescription,
+    openGraph: createOGMeta({
+      title: metadataTitle,
+      description: metadataDescription,
+      url: `https://muslim-pocket.vercel.app/surah/${id}`,
+      type: "article",
+    }),
+  };
+}
 
 const SurahDetail = () => {
   return (

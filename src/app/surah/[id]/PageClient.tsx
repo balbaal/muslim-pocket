@@ -3,7 +3,7 @@
 import Stepper from "@/components/Stepper";
 import SurahCard from "@/components/SurahCard";
 import generateStepper from "@/lib/generateStepper";
-import { useParams, useRouter } from "next/navigation";
+import { useParams } from "next/navigation";
 import { SurahItem } from "@/types/surah";
 import { surahRevelation } from "@/data/surah-revelation";
 import Pagination from "@/components/Pagination";
@@ -15,15 +15,10 @@ import { useEffect, useState } from "react";
 const PageClient = () => {
   const [surahData, setSurahData] = useState<SurahItem | null>(null);
   const params = useParams<{ id: string }>();
-  const router = useRouter();
 
   const getSurahData = async (): Promise<void> => {
-    try {
-      const surah = await import(`@/data/surah/${params.id}.ts`);
-      setSurahData(surah.default);
-    } catch {
-      router.push("/not-found");
-    }
+    const surah = await import(`@/data/surah/${params.id}.ts`);
+    setSurahData(surah.default);
   };
 
   useEffect(() => {

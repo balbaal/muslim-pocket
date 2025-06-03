@@ -1,5 +1,19 @@
 import React from "react";
+import { Metadata } from "next";
+import { metadataMap } from "@/lib/metadata";
 import PageClient from "./PageClient";
+import { createOGMeta } from "@/lib/ogMeta";
+
+export const metadata: Metadata = {
+  title: metadataMap.allSurah.title,
+  description: metadataMap.allSurah.description,
+  openGraph: createOGMeta({
+    title: metadataMap.allSurah.title,
+    description: metadataMap.allSurah.description,
+    url: "https://muslim-pocket.vercel.app/semua-surah",
+    type: "article",
+  }),
+};
 
 const SurahList = () => {
   return (

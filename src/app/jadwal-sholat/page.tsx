@@ -1,5 +1,19 @@
 import React from "react";
+import { Metadata } from "next";
 import PageClient from "./PageClient";
+import { metadataMap } from "@/lib/metadata";
+import { createOGMeta } from "@/lib/ogMeta";
+
+export const metadata: Metadata = {
+  title: metadataMap.prayerSchedule.title,
+  description: metadataMap.prayerSchedule.description,
+  openGraph: createOGMeta({
+    title: metadataMap.prayerSchedule.title,
+    description: metadataMap.prayerSchedule.description,
+    url: "https://muslim-pocket.vercel.app/jadwal-sholat",
+    type: "article",
+  }),
+};
 
 const PrayerSchedule = () => {
   return (
