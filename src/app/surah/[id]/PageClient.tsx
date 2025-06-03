@@ -7,6 +7,7 @@ import { useParams } from "next/navigation";
 import { SurahItem } from "@/types/surah";
 import { surahRevelation } from "@/data/surah-revelation";
 import Pagination from "@/components/Pagination";
+import { useFavoriteSurah } from "@/hooks/useFavoriteSurah";
 import { surahList } from "@/data/surah-list";
 import BackToTopContainer from "@/components/backToTop/BackToTopContainer";
 import ContainerListView from "./ContainerListView";
@@ -14,6 +15,7 @@ import { useEffect, useState } from "react";
 
 const PageClient = () => {
   const [surahData, setSurahData] = useState<SurahItem | null>(null);
+  const { isFavorite, toggleFavorite } = useFavoriteSurah();
   const params = useParams<{ id: string }>();
 
   const getSurahData = async (): Promise<void> => {
@@ -44,7 +46,16 @@ const PageClient = () => {
           translation_name={surahData.translations.id.name}
           number_of_ayah={surahData.number_of_ayah}
           revelation_type={surahRevelation[params.id]}
-          isFavorite={false}
+          isFavorite={isFavorite(surahData.number)}
+          handleToggleFavorite={() =>
+            toggleFavorite({
+              number: surahData.number,
+              name: surahData.name,
+              name_latin: surahData.name_latin,
+              translation_name: surahData.translations.id.name,
+              timestamp: String(new Date().getTime()),
+            })
+          }
         />
       </div>
       <Pagination currentSurah={params.id} listSurah={surahList} />
