@@ -1,5 +1,20 @@
-import Link from "next/link";
 import React from "react";
+import { Metadata } from "next";
+import { metadataMap } from "@/lib/metadata";
+
+import Link from "next/link";
+import { createOGMeta } from "@/lib/ogMeta";
+
+export const metadata: Metadata = {
+  title: metadataMap.about.title,
+  description: metadataMap.about.description,
+  openGraph: createOGMeta({
+    title: metadataMap.about.title,
+    description: metadataMap.about.description,
+    url: "https://muslim-pocket.vercel.app/tentang",
+    type: "website",
+  }),
+};
 
 const About = () => {
   return (

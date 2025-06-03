@@ -5,6 +5,8 @@ import ToastContainer from "@/components/toast/ToastContainer";
 import PrayerFloating from "@/components/prayer/PrayerFloating";
 import PrayerFetcher from "@/components/prayer/PrayerFetcher";
 import QueryProvider from "./providers/queryProvider";
+import { metadataMap } from "@/lib/metadata";
+import { createOGMeta } from "@/lib/ogMeta";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Noto_Naskh_Arabic } from "next/font/google";
 import "./globals.css";
@@ -25,9 +27,14 @@ const arabicFont = Noto_Naskh_Arabic({
 });
 
 export const metadata: Metadata = {
-  title: "Muslim Pocket - Al-Qur'an Digital",
-  description:
-    "Muslim Pocket adalah aplikasi Al-Qur'an digital dengan tampilan modern, fitur pencarian, dan akses mudah ke surah dan ayat harian.",
+  title: metadataMap.home.title,
+  description: metadataMap.home.description,
+  openGraph: createOGMeta({
+    title: metadataMap.home.title,
+    description: metadataMap.home.description,
+    url: "https://muslim-pocket.vercel.app",
+    type: "website",
+  }),
 };
 
 export default function RootLayout({
