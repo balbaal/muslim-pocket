@@ -1,8 +1,8 @@
 "use client";
 
-import Stepper from "@/components/Stepper";
+import Breadcrumb from "@/components/Breadcrumb";
 import SurahCard from "@/components/SurahCard";
-import generateStepper from "@/lib/generateStepper";
+import generateBreadcrumb from "@/lib/generateBreadcrumb";
 import { useParams } from "next/navigation";
 import { SurahItem } from "@/types/surah";
 import { surahRevelation } from "@/data/surah-revelation";
@@ -36,7 +36,7 @@ const PageClient = () => {
   return (
     <div className="flex flex-col gap-6">
       <div className="flex flex-col gap-4">
-        <Stepper steps={generateStepper(`/surah/${params.id}`)} />
+        <Breadcrumb breadcrumb={generateBreadcrumb(`/surah/${params.id}`)} />
         <SurahCard
           number={surahData.number}
           name={surahData.name}
@@ -44,6 +44,7 @@ const PageClient = () => {
           translation_name={surahData.translations.id.name}
           number_of_ayah={surahData.number_of_ayah}
           revelation_type={surahRevelation[params.id]}
+          isFavorite={false}
         />
       </div>
       <Pagination currentSurah={params.id} listSurah={surahList} />

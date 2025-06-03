@@ -23,6 +23,7 @@ const ListView = ({
         translation_name={surah.translation_name}
         number_of_ayah={surah.number_of_ayah}
         revelation_type={surahRevelation[surah.number]}
+        isFavorite={false}
       />
     </article>
   ));
