@@ -44,6 +44,7 @@ const PageClient = () => {
           translation_name={surahData.translations.id.name}
           number_of_ayah={surahData.number_of_ayah}
           revelation_type={surahRevelation[params.id]}
+          isFavorite={false}
         />
       </div>
       <Pagination currentSurah={params.id} listSurah={surahList} />
