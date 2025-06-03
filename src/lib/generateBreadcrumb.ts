@@ -1,8 +1,8 @@
 import { surahList } from "@/data/surah-list";
-import { Step } from "@/types/step";
+import { Breadcrumb } from "@/types/breadcrumb";
 
-const generateStepper = (path: string) => {
-  const mappingPath: Record<string, Step[]> = {
+const generateBreadcrumb = (path: string) => {
+  const mappingPath: Record<string, Breadcrumb[]> = {
     "/semua-surah": [
       { label: "Beranda", url: "/" },
       { label: "Semua Surah", url: "/semua-surah" },
@@ -25,4 +25,4 @@ const generateStepper = (path: string) => {
   return mappingPath[path];
 };
 
-export default generateStepper;
+export default generateBreadcrumb;

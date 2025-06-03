@@ -5,8 +5,8 @@ import { usePathname } from "next/navigation";
 import Input from "@/components/Input";
 import Icon from "@/components/Icons";
 import { surahList } from "@/data/surah-list";
-import Stepper from "@/components/Stepper";
-import generateStepper from "@/lib/generateStepper";
+import Breadcrumb from "@/components/Breadcrumb";
+import generateBreadcrumb from "@/lib/generateBreadcrumb";
 import { useCallback, useState, useEffect } from "react";
 import { SurahItemPreview } from "@/types/surah";
 import { clearString } from "@/lib/transformString";
@@ -64,7 +64,7 @@ const PageClient = () => {
   return (
     <div className="flex flex-col gap-6">
       <div className="flex flex-col gap-4">
-        <Stepper steps={generateStepper(pathname)} />
+        <Breadcrumb breadcrumb={generateBreadcrumb(pathname)} />
         <Input
           type="text"
           prefix={<Icon name="search-outline" className="text-black" size={20} />}
