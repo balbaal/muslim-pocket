@@ -1,12 +1,13 @@
 "use client";
 
-import { toArabicNumber } from "@/lib/transformString";
 import React from "react";
+import { motion } from "framer-motion";
+import { toArabicNumber } from "@/lib/transformString";
 import Icon from "./Icons";
 
-export type OnClickCopyType = (event: React.MouseEvent<SVGSVGElement>) => void;
-export type OnClickShareType = (event: React.MouseEvent<SVGSVGElement>) => void;
-export type OnClickPinType = (event: React.MouseEvent<SVGSVGElement>) => void;
+export type OnClickCopyType = (event: React.MouseEvent) => void;
+export type OnClickShareType = (event: React.MouseEvent) => void;
+export type OnClickPinType = (event: React.MouseEvent) => void;
 
 export type AyatCardProps = {
   onClickCopy: OnClickCopyType;
@@ -35,24 +36,19 @@ const AyatCard: React.FC<AyatCardProps> = ({
       <em className="text-xs text-black">{translationText}</em>
       <div className="flex justify-between items-center">
         <div className="flex gap-4 items-center">
-          <Icon
-            onClick={onClickCopy}
-            name="copy"
-            size={20}
-            className="text-gray-600 cursor-pointer"
-          />
-          <Icon
+          <motion.button whileTap={{ scale: 1.5 }} onClick={onClickCopy} className="cursor-pointer">
+            <Icon name="copy" size={20} className="text-gray-600" />
+          </motion.button>
+          <motion.button
+            whileTap={{ scale: 1.5 }}
             onClick={onClickShare}
-            name="rocket"
-            size={20}
-            className="text-gray-600 cursor-pointer"
-          />
-          <Icon
-            onClick={onClickPin}
-            name="pin"
-            size={20}
-            className="text-gray-600 cursor-pointer"
-          />
+            className="cursor-pointer"
+          >
+            <Icon name="rocket" size={20} className="text-gray-600" />
+          </motion.button>
+          <motion.button whileTap={{ scale: 1.5 }} onClick={onClickPin} className="cursor-pointer">
+            <Icon name="pin" size={20} className="text-gray-600 " />
+          </motion.button>
         </div>
         <p className="select-none font-arabic mt-1 text-xl font-bold text-black border border-gray-300 bg-white rounded-full flex items-center justify-center w-8 h-8">
           {toArabicNumber(ayatNumber)}

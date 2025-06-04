@@ -5,6 +5,7 @@ import { SurahItemPreview } from "@/types/surah";
 import Link from "next/link";
 import Icon from "./Icons";
 import { toArabicNumber } from "@/lib/transformString";
+import { motion } from "framer-motion";
 
 type HandleToggleFavorite = (event: React.MouseEvent) => void;
 
@@ -50,12 +51,17 @@ const SurahCard: React.FC<SurahCardProps> = ({
           >
             {revelation_type}
           </p>
-          <Icon
+          <motion.button
+            whileTap={{ scale: 1.5 }}
             onClick={handleToggleFavorite}
-            name={isFavorite ? "heart" : "heart-outline"}
-            size={20}
-            className="text-red-500"
-          />
+            className="cursor-pointer"
+          >
+            <Icon
+              name={isFavorite ? "heart" : "heart-outline"}
+              size={20}
+              className="text-red-500"
+            />
+          </motion.button>
         </div>
       </div>
     </Link>

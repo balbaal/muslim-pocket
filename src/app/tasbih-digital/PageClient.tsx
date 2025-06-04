@@ -3,6 +3,7 @@
 import React from "react";
 import Icon from "@/components/Icons";
 import { useTasbih } from "@/hooks/useTasbih";
+import { motion } from "framer-motion";
 
 const PageClient = () => {
   const { counter, toggleTasbih, resetCounter } = useTasbih();
@@ -31,21 +32,21 @@ const PageClient = () => {
           {counter} <span className="text-xl font-bold">X</span>
         </p>
       </div>
-      <div className="flex flex-col items-center">
-        <button
+      <div className="flex flex-col items-center relative">
+        <motion.button
+          whileTap={{ scale: 0.8 }}
           onClick={() => handleToggleTasbih(counter + 1)}
-          className="flex items-center justify-center p-6 bg-gray-200 rounded-full cursor-pointer border-6 border-white"
+          className="flex items-center justify-center p-6 bg-gray-200 rounded-full cursor-pointer border-6 border-white absolute top-0"
         >
           <Icon name="chevron-forward-outline" size={150} className="text-black -rotate-90" />
-        </button>
-        <button className="flex items-center justify-center p-6 bg-gray-200 rounded-full cursor-pointer border-6 border-white -mt-10">
-          <Icon
-            onClick={() => handleToggleTasbih(counter - 1)}
-            name="chevron-forward-outline"
-            size={40}
-            className="text-black rotate-90"
-          />
-        </button>
+        </motion.button>
+        <motion.button
+          whileTap={{ scale: 0.8 }}
+          onClick={() => handleToggleTasbih(counter - 1)}
+          className="flex items-center justify-center p-6 bg-gray-200 rounded-full cursor-pointer border-6 border-white absolute top-40"
+        >
+          <Icon name="chevron-forward-outline" size={40} className="text-black rotate-90" />
+        </motion.button>
       </div>
     </div>
   );
