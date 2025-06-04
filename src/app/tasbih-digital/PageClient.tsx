@@ -52,11 +52,3 @@ const PageClient = () => {
 };
 
 export default PageClient;
-
-/**
- * Hooks function for:
- * 1. increment
- * 2. decrement
- * 3. current count
- * 4. reset
- */
