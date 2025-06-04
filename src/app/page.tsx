@@ -3,10 +3,18 @@ import features from "@/data/features";
 import CheckpointCard from "@/views/CheckpointCard";
 import Link from "next/link";
 import ButtonPlayAyat from "@/views/ButtonPlayAyat";
+import FavoriteCard from "@/views/FavoriteCard";
 
 const Home = () => {
   return (
     <main className="px-4 pt-4 flex flex-col gap-6 w-full">
+      <section>
+        <h2 className="font-bold text-lg flex items-center gap-2 text-black mb-4">
+          <span>🍕</span>
+          Favorit Surah
+        </h2>
+        <FavoriteCard />
+      </section>
       <section>
         <h2 className="font-bold text-lg flex items-center gap-2 text-black mb-4">
           <span>📌</span>

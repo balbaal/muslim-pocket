@@ -48,5 +48,5 @@ export const useFavoriteSurah = () => {
     return favorites.some((item) => item.number === surahNumber);
   };
 
-  return { isFavorite, toggleFavorite };
+  return { isFavorite, toggleFavorite, favorites };
 };
