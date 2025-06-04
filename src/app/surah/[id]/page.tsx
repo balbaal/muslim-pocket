@@ -25,6 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const metadataDescription = `Baca Surah ${surahData.name_latin} lengkap dengan teks Arab, latin, dan terjemahan bahasa Indonesia. Dilengkapi nomor ayat dan tampilan bersih.`;
 
   return {
+    metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_UR || "http://localhost:3000"),
     title: metadataTitle,
     description: metadataDescription,
     openGraph: createOGMeta({

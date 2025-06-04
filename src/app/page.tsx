@@ -46,7 +46,7 @@ const Home = () => {
       <section>
         <h2 className="font-bold text-lg flex items-center gap-2 text-black mb-4">
           <span>🚀</span>
-          Fitur Muslim-Pocket.com
+          Fitur Muslimpocket.id
         </h2>
         <div className="grid grid-cols-2 gap-2">
           {features.map((feature) => (

@@ -26,7 +26,7 @@ const Header = () => {
         )}
       </button>
       <Link href="/" className="cursor-pointer">
-        <p className="text-xl font-bold text-black">Muslim-Pocket.com</p>
+        <p className="text-xl font-bold text-black">Muslimpocket.id</p>
       </Link>
       <Link href="/semua-surah" className="cursor-pointer">
         <Icon

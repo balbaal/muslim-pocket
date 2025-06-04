@@ -5,6 +5,7 @@ import PageClient from "./PageClient";
 import { createOGMeta } from "@/lib/ogMeta";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_UR || "http://localhost:3000"),
   title: metadataMap.allSurah.title,
   description: metadataMap.allSurah.description,
   openGraph: createOGMeta({

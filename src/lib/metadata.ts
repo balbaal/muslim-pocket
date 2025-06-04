@@ -1,4 +1,4 @@
-type Pages = "home" | "about" | "prayerSchedule" | "allSurah";
+type Pages = "home" | "about" | "prayerSchedule" | "allSurah" | "digitalTasbih";
 
 type metadataType = Record<
   Pages,
@@ -28,6 +28,11 @@ export const metadataMap: metadataType = {
     title: "Daftar Surah Al-Qur’an Lengkap - Muslim Pocket",
     description:
       "Temukan semua surah dalam Al-Qur’an, lengkap dengan nama, arti, jumlah ayat, dan susunan sesuai mushaf.",
+  },
+  digitalTasbih: {
+    title: "Tasbih Digital Online - Muslim Pocket",
+    description:
+      "Gunakan tasbih digital online gratis untuk menghitung dzikir harian seperti Subhanallah, Alhamdulillah, dan Allahu Akbar dengan mudah.",
   },
   /**
    * Detail surah set directly on Page
