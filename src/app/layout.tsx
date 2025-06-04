@@ -27,6 +27,7 @@ const arabicFont = Noto_Naskh_Arabic({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_UR || "http://localhost:3000"),
   title: metadataMap.home.title,
   description: metadataMap.home.description,
   openGraph: createOGMeta({

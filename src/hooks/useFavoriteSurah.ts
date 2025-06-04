@@ -23,7 +23,7 @@ export const useFavoriteSurah = () => {
 
     if (favorites.length === MAX_FAVORITE_SURAH && !isFavoriteSurah) {
       toast({
-        message: `Maksimal hanya boleh ${MAX_FAVORITE_SURAH} Surah favorit`,
+        message: `Maksimal hanya boleh ${MAX_FAVORITE_SURAH} Surah favorit.`,
         type: "error",
       });
 

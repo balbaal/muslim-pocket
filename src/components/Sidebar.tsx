@@ -45,7 +45,7 @@ const Sidebar = () => {
           ))}
         </ul>
       </nav>
-      <p className="text-sm font-medium underline text-gray-900">Muslim-Pocket.com</p>
+      <p className="text-sm font-medium underline text-gray-900">Muslimpocket.id</p>
     </aside>
   );
 };
