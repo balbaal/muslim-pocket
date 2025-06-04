@@ -25,7 +25,7 @@ export const createOGMeta: createOGMetaType = ({
     siteName,
     images: [
       {
-        url: "/og-muslim-pocket-fancy.jpg",
+        url: "/og-muslim-pocket.jpg",
         width: 1200,
         height: 630,
         alt: "Banner Muslim Pocket",
