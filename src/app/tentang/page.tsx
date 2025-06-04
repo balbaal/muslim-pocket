@@ -6,7 +6,7 @@ import Link from "next/link";
 import { createOGMeta } from "@/lib/ogMeta";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_UR || "http://localhost:3000"),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"),
   title: metadataMap.about.title,
   description: metadataMap.about.description,
   openGraph: createOGMeta({
