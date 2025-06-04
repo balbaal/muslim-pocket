@@ -13,6 +13,7 @@ export async function GET() {
     `${baseUrl}/jadwal-sholat`,
     `${baseUrl}/semua-surah`,
     `${baseUrl}/tentang`,
+    `${baseUrl}/tasbih-digital`,
   ];
 
   const allUrls = [...staticUrls, ...surahUrls];
