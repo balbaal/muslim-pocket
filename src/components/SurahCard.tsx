@@ -6,9 +6,12 @@ import Link from "next/link";
 import Icon from "./Icons";
 import { toArabicNumber } from "@/lib/transformString";
 
+type HandleToggleFavorite = (event: React.MouseEvent) => void;
+
 type SurahCardProps = SurahItemPreview & {
   revelation_type: "Madaniyah" | "Makkiyah";
   isFavorite: boolean;
+  handleToggleFavorite: HandleToggleFavorite;
 };
 
 const SurahCard: React.FC<SurahCardProps> = ({
@@ -19,6 +22,7 @@ const SurahCard: React.FC<SurahCardProps> = ({
   number_of_ayah,
   revelation_type,
   isFavorite,
+  handleToggleFavorite,
 }) => {
   return (
     <Link
@@ -46,7 +50,12 @@ const SurahCard: React.FC<SurahCardProps> = ({
           >
             {revelation_type}
           </p>
-          <Icon name={isFavorite ? "heart" : "heart-outline"} size={20} className="text-red-500" />
+          <Icon
+            onClick={handleToggleFavorite}
+            name={isFavorite ? "heart" : "heart-outline"}
+            size={20}
+            className="text-red-500"
+          />
         </div>
       </div>
     </Link>
