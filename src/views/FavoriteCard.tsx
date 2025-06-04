@@ -10,32 +10,42 @@ const FavoriteCard = () => {
 
   if (favorites?.length === 0) {
     return (
-      <div className="flex gap-2 shadow rounded-lg p-4 bg-gray-100 text-black">
-        <Link href="/semua-surah" className="flex items-center justify-between">
-          <p>Kamu belum punya Surah favorit 🔥</p>
-          <Icon name="arrow-forward" size={20} />
-        </Link>
-      </div>
+      <Link
+        href="/semua-surah"
+        className="flex items-center justify-between w-full shadow rounded-lg p-4 bg-gray-100 text-black"
+      >
+        <p>Kamu belum punya Surah favorit 🔥</p>
+        <Icon name="arrow-forward" size={20} />
+      </Link>
     );
   }
 
   return (
-    <div className={`grid grid-cols-${favorites?.length} template gap-2`}>
+    <div
+      className={`grid gap-2 ${
+        favorites.length === 1
+          ? "grid-cols-1"
+          : favorites.length === 2
+            ? "grid-cols-2"
+            : favorites.length === 3
+              ? "grid-cols-3"
+              : "grid-cols-4"
+      }`}
+    >
       {favorites.map((item) => (
-        <div
+        <Link
           key={item.number}
-          className="flex flex-col rounded-lg bg-gray-100 text-black shadow p-4"
+          href={`/surah/${item.number}`}
+          className="flex items-center justify-between rounded-lg bg-gray-100 text-black shadow p-4"
         >
-          <Link href={`/surah/${item.number}`} className="flex items-center justify-between">
-            <div className="flex flex-col">
-              <p className="text-2xl font-arabic font-bold">{item.name}</p>
-              <p className="text-sm">
-                {item.name_latin} ({item.number})
-              </p>
-            </div>
-            {favorites.length <= 2 && <Icon name="arrow-forward" size={20} />}
-          </Link>
-        </div>
+          <div className="flex flex-col">
+            <p className="text-2xl font-arabic font-bold">{item.name}</p>
+            <p className="text-sm">
+              {item.name_latin} ({item.number})
+            </p>
+          </div>
+          {favorites.length <= 2 && <Icon name="arrow-forward" size={20} />}
+        </Link>
       ))}
     </div>
   );
