@@ -11,7 +11,7 @@ const PageClient = () => {
   const handleToggleTasbih = (value: number) => {
     toggleTasbih(value);
 
-    if (navigator.vibrate) {
+    if (!!navigator?.vibrate) {
       navigator.vibrate(200);
     } else {
       console.log("vibrate not support");
@@ -20,12 +20,6 @@ const PageClient = () => {
 
   return (
     <div className="flex flex-col gap-10 items-center">
-      <button
-        className="text-black px-6 font-bold py-1.5 bg-gray-200 rounded-full cursor-pointer select-none"
-        onClick={resetCounter}
-      >
-        Mulai Lagi
-      </button>
       <div className="flex flex-col items-center text-black select-none">
         <p className="font-arabic font-bold text-xl">سُبْحَانَ اللّهِ</p>
         <p className="text-8xl flex items-center justify-center gap-2">
@@ -48,6 +42,12 @@ const PageClient = () => {
           <Icon name="chevron-forward-outline" size={40} className="text-black rotate-90" />
         </motion.button>
       </div>
+      <button
+        className="text-black px-6 font-bold py-1.5 bg-gray-200 rounded-full cursor-pointer select-none mt-66"
+        onClick={resetCounter}
+      >
+        Mulai Lagi
+      </button>
     </div>
   );
 };

@@ -26,11 +26,19 @@ const About = () => {
 
       <article className="p-4 rounded-lg bg-gray-100 shadow flex flex-col gap-4">
         <p className="text-base text-black">
-          <strong>Muslim Pocket</strong> adalah ruang sederhana yang kami ciptakan untuk menemani
-          langkahmu dalam mendekat kepada-Nya. Di tengah dunia yang serba cepat, kami percaya bahwa
-          sedikit keheningan bisa membawa banyak ketenangan. Muslim Pocket hadir sebagai pengingat
-          sunyi, sebagai sahabat ringan di genggaman.
+          <Link href="/">
+            <strong>
+              <u className="text-blue-700">Muslim Pocket</u>
+            </strong>
+          </Link>{" "}
+          adalah bentuk kecil kontribusi saya untuk umat muslim — sebuah ruang sederhana yang saya
+          bangun untuk membantu kita lebih mudah mengingat Allah, di mana pun dan kapan pun.
         </p>
+        <p className="text-black">
+          Saya percaya bahwa teknologi bisa menjadi jalan menuju kebaikan, dan semoga setiap fitur
+          di dalamnya sekecil apa pun bisa menjadi manfaat yang terus mengalir.
+        </p>
+        <p className="text-black">Semoga Muslim Pocket ini bisa menjadi amal jariah, insyaAllah.</p>
 
         <section>
           <h2 className="text-base text-black font-bold">
@@ -82,8 +90,8 @@ const About = () => {
               — API global untuk waktu sholat harian berdasarkan lokasi.
             </li>
             <li>
-              Menggunakan <strong>Geolocation API</strong> dari browser untuk mendapatkan koordinat
-              pengguna secara real-time.
+              Menggunakan <i>Geolocation API</i> dari browser untuk mendapatkan koordinat pengguna
+              secara real-time.
             </li>
           </ul>
         </section>
