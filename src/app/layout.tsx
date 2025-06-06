@@ -62,7 +62,7 @@ export default function RootLayout({
           </section>
           <ToastContainer />
         </QueryProvider>
-        <Analytics />
+        <Analytics mode="production" />
       </body>
     </html>
   );
