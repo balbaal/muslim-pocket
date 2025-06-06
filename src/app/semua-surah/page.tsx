@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: createOGMeta({
     title: metadataMap.allSurah.title,
     description: metadataMap.allSurah.description,
-    url: "https://muslim-pocket.vercel.app/semua-surah",
+    url: "https://muslimpocket.id/semua-surah",
     type: "article",
   }),
 };

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: createOGMeta({
     title: metadataMap.prayerSchedule.title,
     description: metadataMap.prayerSchedule.description,
-    url: "https://muslim-pocket.vercel.app/jadwal-sholat",
+    url: "https://muslimpocket.id/jadwal-sholat",
     type: "article",
   }),
 };

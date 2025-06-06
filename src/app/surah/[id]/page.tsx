@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: createOGMeta({
       title: metadataTitle,
       description: metadataDescription,
-      url: `https://muslim-pocket.vercel.app/surah/${id}`,
+      url: `https://muslimpocket.id/surah/${id}`,
       type: "article",
     }),
   };

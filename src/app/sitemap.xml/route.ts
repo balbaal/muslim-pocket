@@ -1,7 +1,7 @@
 const TOTAL_SURAH = 114;
 
 export async function GET() {
-  const baseUrl = "https://muslim-pocket.vercel.app";
+  const baseUrl = "https://muslimpocket.id";
 
   const surahUrls = Array.from({ length: TOTAL_SURAH }, (_, i) => {
     const nomor = i + 1;
