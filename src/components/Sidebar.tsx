@@ -23,7 +23,7 @@ const Sidebar = () => {
       icon: "alert-circle-outline" as const,
     },
     {
-      href: "https://docs.google.com/forms/d/e/1FAIpQLSejktcdD2jtth9LGK8J0f2RbywQvxLHxRYQQVdLhVFnyj7rxQ/viewform",
+      href: process.env.NEXT_PUBLIC_USER_FEEDBACK_URL || "/",
       label: "Feedback",
       target: "_blank",
       icon: "chat-bubble-outline" as const,
