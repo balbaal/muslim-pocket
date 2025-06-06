@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SidebarContainer from "@/components/SidebarContainer";
@@ -61,6 +62,7 @@ export default function RootLayout({
           </section>
           <ToastContainer />
         </QueryProvider>
+        <Analytics />
       </body>
     </html>
   );
