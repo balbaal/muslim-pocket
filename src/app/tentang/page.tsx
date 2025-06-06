@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: createOGMeta({
     title: metadataMap.about.title,
     description: metadataMap.about.description,
-    url: "https://muslim-pocket.vercel.app/tentang",
+    url: "https://muslimpocket.id/tentang",
     type: "website",
   }),
 };

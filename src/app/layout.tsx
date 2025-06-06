@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   openGraph: createOGMeta({
     title: metadataMap.home.title,
     description: metadataMap.home.description,
-    url: "https://muslim-pocket.vercel.app",
+    url: "https://muslimpocket.id",
     type: "website",
   }),
 };

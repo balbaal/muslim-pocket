@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   openGraph: createOGMeta({
     title: metadataMap.digitalTasbih.title,
     description: metadataMap.digitalTasbih.description,
-    url: "https://muslim-pocket.vercel.app/tasbih-digital",
+    url: "https://muslimpocket.id/tasbih-digital",
     type: "website",
   }),
 };
