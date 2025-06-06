@@ -33,6 +33,7 @@ ${allUrls
 </urlset>`.trim();
 
   return new Response(xml, {
+    status: 200,
     headers: {
       "Content-Type": "application/xml",
     },
