@@ -4,10 +4,22 @@ import CheckpointCard from "@/views/CheckpointCard";
 import Link from "next/link";
 import ButtonPlayAyat from "@/views/ButtonPlayAyat";
 import FavoriteCard from "@/views/FavoriteCard";
+import SchemaJsonLd from "@/components/SchemaJsonLd";
+import { metadataMap } from "@/lib/metadata";
 
 const Home = () => {
   return (
     <main className="px-4 pt-4 flex flex-col gap-6 w-full">
+      <SchemaJsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          url: "https://muslimpocket.id",
+          name: metadataMap.home.title,
+          description: metadataMap.home.description,
+          inLanguage: "id",
+        }}
+      />
       <section>
         <h2 className="font-bold text-lg flex items-center gap-2 text-black mb-4">
           <span>🍕</span>

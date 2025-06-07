@@ -4,6 +4,7 @@ import { metadataMap } from "@/lib/metadata";
 
 import Link from "next/link";
 import { createOGMeta } from "@/lib/ogMeta";
+import SchemaJsonLd from "@/components/SchemaJsonLd";
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"),
@@ -19,7 +20,17 @@ export const metadata: Metadata = {
 
 const About = () => {
   return (
-    <div className="w-full p-4 flex flex-col gap-4">
+    <main className="w-full p-4 flex flex-col gap-4">
+      <SchemaJsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "AboutPage",
+          url: "https://muslimpocket.id/tentang",
+          name: metadataMap.about.title,
+          description: metadataMap.about.description,
+          inLanguage: "id",
+        }}
+      />
       <h1 className="text-2xl font-bold text-black flex items-center gap-2">
         🍉 <span>Tentang Muslim Pocket</span>
       </h1>
@@ -107,7 +118,7 @@ const About = () => {
           </Link>
         </p>
       </article>
-    </div>
+    </main>
   );
 };
 
