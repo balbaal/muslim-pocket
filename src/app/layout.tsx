@@ -11,6 +11,7 @@ import { createOGMeta } from "@/lib/ogMeta";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Noto_Naskh_Arabic } from "next/font/google";
 import "./globals.css";
+import SchemaJsonLd from "@/components/SchemaJsonLd";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -51,6 +52,8 @@ export default function RootLayout({
     <html lang="id">
       <head>
         <meta name="apple-mobile-web-app-title" content="Muslimpocket.id" />
+        {/* TODO(schema jsonld): MAKE IT DYNAMIC DATA BASED ON EACH PAGE */}
+        <SchemaJsonLd />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${arabicFont.variable} antialiased`}

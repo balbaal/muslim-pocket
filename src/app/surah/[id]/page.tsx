@@ -40,7 +40,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 const SurahDetail = () => {
   return (
     <main className="p-4 flex flex-col gap-4 w-full">
-      {/* TODO: SETUP DYNAMIC SCHEMA JSON LD BASED ON SURAH DATA */}
       <h1 className="text-2xl font-bold text-black flex items-center gap-2">
         📖 <span>Baca per Surah</span>
       </h1>

@@ -1,17 +1,25 @@
 // https://nextjs.org/docs/app/guides/json-ld
 
 import React from "react";
+import { metadataMap } from "@/lib/metadata";
+import { WithContext, WebSite } from "schema-dts";
 
-interface SchemaProps {
-  data: Record<string, string>;
-}
+const SchemaJsonLd = () => {
+  const jsonLd: WithContext<WebSite> = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    url: "https://muslimpocket.id",
+    name: metadataMap.home.title,
+    description: metadataMap.home.description,
+    image: "https://muslimpocket.id/icon.png",
+    inLanguage: "id",
+  };
 
-const SchemaJsonLd = ({ data }: SchemaProps) => {
   return (
     <script
       type="application/ld+json"
       dangerouslySetInnerHTML={{
-        __html: JSON.stringify(data).replace(/</g, "\\u003c"),
+        __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
       }}
     />
   );
