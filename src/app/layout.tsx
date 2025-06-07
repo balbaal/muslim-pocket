@@ -49,6 +49,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="id">
+      <head>
+        <meta name="apple-mobile-web-app-title" content="Muslimpocket.id" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${arabicFont.variable} antialiased`}
       >
