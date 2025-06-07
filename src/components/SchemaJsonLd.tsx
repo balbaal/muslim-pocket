@@ -1,7 +1,6 @@
 // https://nextjs.org/docs/app/guides/json-ld
 
 import React from "react";
-import Head from "next/head";
 
 interface SchemaProps {
   data: Record<string, string>;
@@ -9,12 +8,12 @@ interface SchemaProps {
 
 const SchemaJsonLd = ({ data }: SchemaProps) => {
   return (
-    <Head>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
-      />
-    </Head>
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify(data).replace(/</g, "\\u003c"),
+      }}
+    />
   );
 };
 
