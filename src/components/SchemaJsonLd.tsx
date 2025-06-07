@@ -1,3 +1,5 @@
+// https://nextjs.org/docs/app/guides/json-ld
+
 import React from "react";
 import Head from "next/head";
 
