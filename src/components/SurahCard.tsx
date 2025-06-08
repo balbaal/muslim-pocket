@@ -26,10 +26,7 @@ const SurahCard: React.FC<SurahCardProps> = ({
   handleToggleFavorite,
 }) => {
   return (
-    <Link
-      href={`/surah/${number}`}
-      className="bg-gray-50 rounded-lg p-4  hover:bg-gray-100 flex gap-4"
-    >
+    <Link href={`/surah/${number}`} className="rounded-lg p-4 bg-gray-100 flex gap-4">
       <div className="flex items-start">
         <p className="font-arabic mt-1 text-xl font-bold text-black border border-gray-300 bg-white rounded-full flex items-center justify-center w-8 h-8">
           {toArabicNumber(number)}
@@ -39,7 +36,7 @@ const SurahCard: React.FC<SurahCardProps> = ({
         <div className="flex items-center justify-between">
           <div className="flex flex-col">
             <p className="font-bold text-black">{name_latin}</p>
-            <p className="text-xs text-gray-400">
+            <p className="text-xs text-gray-700">
               {translation_name} • {number_of_ayah} Ayat
             </p>
           </div>
@@ -55,10 +52,11 @@ const SurahCard: React.FC<SurahCardProps> = ({
             whileTap={{ scale: 1.5 }}
             onClick={handleToggleFavorite}
             className="cursor-pointer"
+            aria-label="button-favorite"
           >
             <Icon
               name={isFavorite ? "heart" : "heart-outline"}
-              size={20}
+              size={24}
               className="text-red-500"
             />
           </motion.button>

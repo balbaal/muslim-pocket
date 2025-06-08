@@ -36,17 +36,28 @@ const AyatCard: React.FC<AyatCardProps> = ({
       <em className="text-xs text-black">{translationText}</em>
       <div className="flex justify-between items-center">
         <div className="flex gap-4 items-center">
-          <motion.button whileTap={{ scale: 1.5 }} onClick={onClickCopy} className="cursor-pointer">
+          <motion.button
+            aria-label="button-copy"
+            whileTap={{ scale: 1.5 }}
+            onClick={onClickCopy}
+            className="cursor-pointer"
+          >
             <Icon name="copy" size={20} className="text-gray-600" />
           </motion.button>
           <motion.button
+            aria-label="button-share"
             whileTap={{ scale: 1.5 }}
             onClick={onClickShare}
             className="cursor-pointer"
           >
             <Icon name="rocket" size={20} className="text-gray-600" />
           </motion.button>
-          <motion.button whileTap={{ scale: 1.5 }} onClick={onClickPin} className="cursor-pointer">
+          <motion.button
+            aria-label="button-pin"
+            whileTap={{ scale: 1.5 }}
+            onClick={onClickPin}
+            className="cursor-pointer"
+          >
             <Icon name="pin" size={20} className="text-gray-600 " />
           </motion.button>
         </div>

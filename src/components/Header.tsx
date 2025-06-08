@@ -10,7 +10,7 @@ const Header = () => {
 
   return (
     <header className="flex items-center justify-between border-b px-4 py-3">
-      <button onClick={toggleMenu} className="cursor-pointer">
+      <button aria-label="action-button-sidebar" onClick={toggleMenu} className="cursor-pointer">
         {isMenuOpen ? (
           <Icon
             name="close-outline"
@@ -28,7 +28,7 @@ const Header = () => {
       <Link href="/" className="cursor-pointer">
         <p className="text-xl font-bold text-black">Muslimpocket.id</p>
       </Link>
-      <Link href="/semua-surah" className="cursor-pointer">
+      <Link aria-label="redirect-button-semua-surah" href="/semua-surah" className="cursor-pointer">
         <Icon
           name="search-outline"
           className="text-gray-600 hover:text-gray-900 duration-300 cursor-pointer"
