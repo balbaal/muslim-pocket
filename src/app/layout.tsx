@@ -71,7 +71,9 @@ export default function RootLayout({
           </section>
           <ToastContainer />
         </QueryProvider>
-        <Analytics mode="production" />
+        <Analytics
+          mode={process.env.NEXT_PUBLIC_TYPE === "production" ? "production" : "development"}
+        />
       </body>
     </html>
   );
