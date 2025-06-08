@@ -16,16 +16,19 @@ import SchemaJsonLd from "@/components/SchemaJsonLd";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const arabicFont = Noto_Naskh_Arabic({
   variable: "--font-arabic",
   subsets: ["arabic"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
