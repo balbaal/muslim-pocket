@@ -39,8 +39,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 const SurahDetail = () => {
   return (
-    <main className="p-4 flex flex-col gap-4 w-full">
-      <h1 className="text-2xl font-bold text-black flex items-center gap-2">
+    <main className="p-4 flex flex-col gap-4 w-full text-black dark:text-white">
+      <h1 className="text-2xl font-bold flex items-center gap-2">
         📖 <span>Baca per Surah</span>
       </h1>
       <PageClient />

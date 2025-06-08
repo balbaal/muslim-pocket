@@ -16,14 +16,17 @@ const ListView = () => {
     return (
       <section
         key={i + 1}
-        className={`bg-gray-100 rounded-lg w-full p-4 shadow flex flex-col gap-2 ${isToday ? "bg-green-100 border border-green-500" : null}`}
+        className={`text-black dark:text-white bg-gray-100 dark:bg-dark-800 rounded-lg w-full p-4 shadow flex flex-col gap-2 ${isToday ? "bg-green-100 dark:bg-green-900 border border-green-500" : null}`}
       >
-        <h2 className="text-black text-lg font-bold">{prayer.readableDate}</h2>
+        <h2 className="text-lg font-bold">{prayer.readableDate}</h2>
         <div className="grid grid-cols-2 sm:grid-cols-5 gap-2">
           {prayer.prayerTime.map((item, idx) => (
-            <div key={idx + 1} className="bg-white rounded-lg p-2 flex flex-col text-center">
-              <p className="text-black text-sm">{item.name}</p>
-              <p className="text-black text-sm font-bold">{item.time}</p>
+            <div
+              key={idx + 1}
+              className="bg-white dark:bg-dark-900 rounded-lg p-2 flex flex-col text-center"
+            >
+              <p className="text-sm">{item.name}</p>
+              <p className="text-sm font-bold">{item.time}</p>
             </div>
           ))}
         </div>

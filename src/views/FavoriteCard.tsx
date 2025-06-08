@@ -12,7 +12,7 @@ const FavoriteCard = () => {
     return (
       <Link
         href="/semua-surah"
-        className="flex items-center justify-between w-full shadow rounded-lg p-4 bg-gray-100 text-black"
+        className="flex items-center justify-between w-full shadow rounded-lg p-4 bg-gray-100 text-black dark:bg-dark-800 dark:text-white"
       >
         <p>Kamu belum punya Surah favorit 🔥</p>
         <Icon name="arrow-forward" size={20} />
@@ -36,7 +36,7 @@ const FavoriteCard = () => {
         <Link
           key={item.number}
           href={`/surah/${item.number}`}
-          className="flex items-center justify-between rounded-lg bg-gray-100 text-black shadow p-4"
+          className="flex items-center justify-between rounded-lg bg-gray-100 text-black dark:bg-dark-800 dark:text-white shadow p-4"
         >
           <div className="flex flex-col">
             <p className="text-2xl font-arabic font-bold">{item.name}</p>

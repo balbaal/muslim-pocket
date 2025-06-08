@@ -7,27 +7,27 @@ import FavoriteCard from "@/views/FavoriteCard";
 
 const Home = () => {
   return (
-    <main className="px-4 pt-4 flex flex-col gap-6 w-full">
+    <main className="px-4 pt-4 flex flex-col gap-6 w-full text-black dark:text-white">
       <section>
-        <h2 className="font-bold text-lg flex items-center gap-2 text-black mb-4">
+        <h2 className="font-bold text-lg flex items-center gap-2 mb-4">
           <span>🍕</span>
           Favorit Surah
         </h2>
         <FavoriteCard />
       </section>
       <section>
-        <h2 className="font-bold text-lg flex items-center gap-2 text-black mb-4">
+        <h2 className="font-bold text-lg flex items-center gap-2 mb-4">
           <span>📌</span>
           Surah Terakhir Dibaca
         </h2>
         <CheckpointCard />
       </section>
       <section>
-        <h2 className="font-bold text-lg flex items-center gap-2 text-black mb-4">
+        <h2 className="font-bold text-lg flex items-center gap-2 mb-4">
           <span>🎶</span>
           Kutipan Ayat
         </h2>
-        <div className="flex flex-col gap-2 shadow rounded-lg p-4 bg-gray-100 text-black">
+        <div className="flex flex-col gap-2 shadow rounded-lg p-4 bg-gray-100 dark:bg-dark-800">
           <div className="flex flex-col gap-2">
             <p className="text-right text-2xl">
               وَاسْتَعِيْنُوْا بِالصَّبْرِ وَالصَّلٰوةِ ۗ وَاِنَّهَا لَكَبِيْرَةٌ اِلَّا عَلَى
@@ -44,7 +44,7 @@ const Home = () => {
         </div>
       </section>
       <section>
-        <h2 className="font-bold text-lg flex items-center gap-2 text-black mb-4">
+        <h2 className="font-bold text-lg flex items-center gap-2 mb-4">
           <span>🚀</span>
           Fitur Muslimpocket.id
         </h2>
@@ -53,9 +53,9 @@ const Home = () => {
             <Link
               href={feature.link}
               key={feature.id}
-              className="bg-gray-100 shadow rounded-lg p-4"
+              className="bg-gray-100 dark:bg-dark-800 shadow rounded-lg p-4"
             >
-              <p className="flex gap-2 text-black items-center">
+              <p className="flex gap-2 items-center">
                 {feature.icon} <span>{feature.title}</span>
               </p>
             </Link>

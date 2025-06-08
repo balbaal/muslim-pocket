@@ -13,13 +13,13 @@ const Breadcrumb = ({ breadcrumb = [] }: BreadcrumbProps) => {
   if (breadcrumb.length === 0) return null;
 
   return (
-    <div className="flex items-center">
+    <div className="flex items-center text-black dark:text-white">
       {breadcrumb.map((item, index) => {
         const isShowArrow = index < breadcrumb.length - 1;
         const isLastBreadcrumb = index === breadcrumb.length - 1;
 
         return (
-          <div className="flex items-center text-black text-sm" key={index}>
+          <div className="flex items-center text-sm" key={index}>
             <Link
               href={item.url}
               className={`flex items-center gap-2 ${isLastBreadcrumb ? "underline" : ""}`}
@@ -27,7 +27,7 @@ const Breadcrumb = ({ breadcrumb = [] }: BreadcrumbProps) => {
               {item?.icon}
               <span>{item.label}</span>
             </Link>
-            {isShowArrow && <Icon name="chevron-forward-outline" className="text-black m-1" />}
+            {isShowArrow && <Icon name="chevron-forward-outline" className="m-1" />}
           </div>
         );
       })}

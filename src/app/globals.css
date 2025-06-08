@@ -1,23 +1,19 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* Hitam: #0a0a0a */
+/* Agak Hitam: #181818 */
+
+/* Text Active: White
+Text: Gray */
+
+/* Border: 0.5px #F3F5F727 */
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-dark-900: #0a0a0a;
+  --color-dark-800: #181818;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-arabic: var(--font-arabic);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #ffffff;
-    --foreground: #ededed;
-  }
 }
 
 @keyframes slide-up {
@@ -31,12 +27,12 @@
   }
 }
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 .animate-slide-up {
   animation: slide-up 0.3s ease-out;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }

@@ -4,8 +4,8 @@ import Icon from "./Icons";
 
 const Footer = () => {
   return (
-    <footer className="bg-white p-4">
-      <div className="container mx-auto px-4 text-center text-black text-sm select-none">
+    <footer className="p-4">
+      <div className="container mx-auto px-4 text-center text-black dark:text-white text-sm select-none">
         <p>
           &copy; {new Date().getFullYear()}{" "}
           <Link href="/" className="underline">

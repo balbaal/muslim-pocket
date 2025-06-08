@@ -56,11 +56,11 @@ export default function RootLayout({
         <SchemaJsonLd />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${arabicFont.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${arabicFont.variable} antialiased dark:bg-dark-900`}
       >
         <QueryProvider>
           <PrayerFetcher />
-          <section className="w-full max-w-[500px] mx-auto bg-white shadow-xl">
+          <section className="w-full max-w-[500px] mx-auto bg-white dark:bg-dark-900 shadow-xl">
             <SidebarContainer />
             <Header />
             <PrayerFloating />

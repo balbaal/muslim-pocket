@@ -16,7 +16,7 @@ const CheckpointCard = () => {
 
   if (!checkpoint) {
     return (
-      <div className="flex flex-col gap-2 shadow rounded-lg p-4 bg-gray-100 text-black">
+      <div className="flex flex-col gap-2 shadow rounded-lg p-4 bg-gray-100 text-black dark:bg-dark-800 dark:text-white">
         <Link href="/semua-surah" className="flex items-center justify-between">
           <p>Belum ada, Ayo mulai baca Surah 🔥</p>
           <Icon name="arrow-forward" size={20} />
@@ -26,7 +26,7 @@ const CheckpointCard = () => {
   }
 
   return (
-    <div className="flex flex-col gap-2 shadow rounded-lg p-4 bg-gray-100 text-black">
+    <div className="flex flex-col gap-2 shadow rounded-lg p-4 bg-gray-100 text-black dark:bg-dark-800 dark:text-white">
       <Link
         href={`/surah/${checkpoint.number}?ayah=${checkpoint.ayah_number}`}
         className="flex items-center justify-between"
