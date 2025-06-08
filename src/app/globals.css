@@ -1,13 +1,5 @@
 @import "tailwindcss";
 
-/* Hitam: #0a0a0a */
-/* Agak Hitam: #181818 */
-
-/* Text Active: White
-Text: Gray */
-
-/* Border: 0.5px #F3F5F727 */
-
 @theme inline {
   --color-dark-900: #0a0a0a;
   --color-dark-800: #181818;
