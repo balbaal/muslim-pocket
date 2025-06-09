@@ -34,11 +34,11 @@ const About = () => {
           adalah bentuk kecil kontribusi saya untuk umat muslim — sebuah ruang sederhana yang saya
           bangun untuk membantu kita lebih mudah mengingat Allah, di mana pun dan kapan pun.
         </p>
-        <p className="">
+        <p>
           Saya percaya bahwa teknologi bisa menjadi jalan menuju kebaikan, dan semoga setiap fitur
           di dalamnya sekecil apa pun bisa menjadi <u>manfaat</u> yang terus mengalir.
         </p>
-        <p className="">
+        <p>
           Semoga Muslim Pocket ini bisa menjadi <u>amal jariah</u>, insyaAllah.
         </p>
 
@@ -97,7 +97,7 @@ const About = () => {
             </li>
           </ul>
         </section>
-        <p className="">
+        <p>
           Muslim Pocket proyek terbuka yang dikembangkan dengan cinta dan keikhlasan. Kontribusi,
           kritik, atau bintang dari kamu sangat berarti. Lihat kode sumbernya di:{" "}
           <Link

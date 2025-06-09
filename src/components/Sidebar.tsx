@@ -20,7 +20,7 @@ const Sidebar = () => {
       href: "/tentang",
       label: "Tentang",
       target: "_self",
-      icon: "alert-circle-outline" as const,
+      icon: "information-circle-outline" as const,
     },
     {
       href: process.env.NEXT_PUBLIC_USER_FEEDBACK_URL || "/",

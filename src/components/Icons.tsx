@@ -22,6 +22,7 @@ import CaretForward from "@/assets/icons/caret-forward.svg";
 import AlarmOutline from "@/assets/icons/alarm-outline.svg";
 import Alarm from "@/assets/icons/alarm.svg";
 import ChatBubbleOutline from "@/assets/icons/chatbubble-ellipses-outline.svg";
+import InformationCircleOutline from "@/assets/icons/information-circle-outline.svg";
 // Update "union type IconName" & "interface IconComponent",
 // If you add new Icon SVG on "assets/icons/"
 
@@ -48,6 +49,7 @@ interface IconComponent {
   "alarm-outline": React.ComponentType<React.SVGProps<SVGSVGElement>>;
   alarm: React.ComponentType<React.SVGProps<SVGSVGElement>>;
   "chat-bubble-outline": React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  "information-circle-outline": React.ComponentType<React.SVGProps<SVGSVGElement>>;
 }
 
 export type IconName =
@@ -72,7 +74,8 @@ export type IconName =
   | "caret-forward"
   | "alarm-outline"
   | "alarm"
-  | "chat-bubble-outline";
+  | "chat-bubble-outline"
+  | "information-circle-outline";
 
 type IconProps = {
   name: IconName;
@@ -103,6 +106,7 @@ const icons: IconComponent = {
   "alarm-outline": AlarmOutline,
   alarm: Alarm,
   "chat-bubble-outline": ChatBubbleOutline,
+  "information-circle-outline": InformationCircleOutline,
 };
 
 const Icon: FC<IconProps> = ({ name, size = 16, className = "", ...props }) => {
