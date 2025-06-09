@@ -52,7 +52,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="id">
+    <html lang="id" suppressHydrationWarning>
       <head>
         <meta name="apple-mobile-web-app-title" content="Muslimpocket.id" />
         {/* TODO(schema jsonld): MAKE IT DYNAMIC DATA BASED ON EACH PAGE */}
