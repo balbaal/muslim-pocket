@@ -38,7 +38,9 @@ const About = () => {
           Saya percaya bahwa teknologi bisa menjadi jalan menuju kebaikan, dan semoga setiap fitur
           di dalamnya sekecil apa pun bisa menjadi manfaat yang terus mengalir.
         </p>
-        <p className="text-black">Semoga Muslim Pocket ini bisa menjadi amal jariah, insyaAllah.</p>
+        <p className="text-black">
+          Semoga Muslim Pocket ini bisa menjadi <u>amal jariah</u>, insyaAllah.
+        </p>
 
         <section>
           <h2 className="text-base text-black font-bold">
