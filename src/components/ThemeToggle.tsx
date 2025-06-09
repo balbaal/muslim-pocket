@@ -22,7 +22,6 @@ export default function ThemeToggle() {
 
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
-    console.log(savedTheme);
     if (savedTheme === "dark") {
       const root = window.document.documentElement;
       root.classList.add("dark");
@@ -33,6 +32,7 @@ export default function ThemeToggle() {
 
   return (
     <button
+      aria-label="toggle-switch-theme"
       onClick={handleToggleTheme}
       className="text-lg cursor-pointer w-7 h-7 bg-gray-300 dark:bg-gray-700 text-black rounded"
     >

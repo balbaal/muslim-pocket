@@ -39,7 +39,7 @@ const SurahCard: React.FC<SurahCardProps> = ({
         <div className="flex items-center justify-between">
           <div className="flex flex-col">
             <p className="font-bold">{name_latin}</p>
-            <p className="text-xs text-gray-400">
+            <p className="text-xs text-gray-700">
               {translation_name} • {number_of_ayah} Ayat
             </p>
           </div>
@@ -55,10 +55,11 @@ const SurahCard: React.FC<SurahCardProps> = ({
             whileTap={{ scale: 1.5 }}
             onClick={handleToggleFavorite}
             className="cursor-pointer"
+            aria-label="button-favorite"
           >
             <Icon
               name={isFavorite ? "heart" : "heart-outline"}
-              size={20}
+              size={24}
               className="text-red-500"
             />
           </motion.button>

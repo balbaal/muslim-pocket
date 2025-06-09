@@ -28,6 +28,7 @@ const PageClient = () => {
       </div>
       <div className="flex flex-col items-center relative">
         <motion.button
+          aria-label="button-increment"
           whileTap={{ scale: 0.8 }}
           onClick={() => handleToggleTasbih(counter + 1)}
           className="flex items-center justify-center p-6 bg-gray-200 dark:bg-dark-800 rounded-full cursor-pointer border-6 border-white dark:border-dark-900 absolute top-0"
@@ -39,6 +40,7 @@ const PageClient = () => {
           />
         </motion.button>
         <motion.button
+          aria-label="button-decrement"
           whileTap={{ scale: 0.8 }}
           onClick={() => handleToggleTasbih(counter - 1)}
           className="flex items-center justify-center p-6 bg-gray-200 dark:bg-dark-800 rounded-full cursor-pointer border-6 border-white dark:border-dark-900 absolute top-40"
