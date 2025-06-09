@@ -61,7 +61,9 @@ const AyatCard: React.FC<AyatCardProps> = ({
             <Icon name="pin" size={20} className="text-gray-600 dark:text-white" />
           </motion.button>
         </div>
-        <p className="select-none font-arabic mt-1 text-xl font-bold border border-gray-300 bg-white dark:bg-dark-800 dark:border-0 rounded-full flex items-center justify-center w-8 h-8">
+        <p
+          className={`select-none font-arabic mt-1 text-xl font-bold border border-gray-300 bg-white dark:bg-dark-800 ${isCheckpoint ? "dark:border-0" : ""} rounded-full flex items-center justify-center w-8 h-8`}
+        >
           {toArabicNumber(ayatNumber)}
         </p>
       </div>

@@ -39,7 +39,7 @@ const SurahCard: React.FC<SurahCardProps> = ({
         <div className="flex items-center justify-between">
           <div className="flex flex-col">
             <p className="font-bold">{name_latin}</p>
-            <p className="text-xs text-gray-700">
+            <p className="text-xs text-gray-700 dark:text-gray-300">
               {translation_name} • {number_of_ayah} Ayat
             </p>
           </div>

@@ -7,26 +7,29 @@ export default function ThemeToggle() {
 
   const handleToggleTheme = () => {
     const root = window.document.documentElement;
-    setDark((state) => {
-      if (!state) {
-        root.classList.add("dark");
-        localStorage.setItem("theme", "dark");
-        return true;
-      } else {
-        root.classList.remove("dark");
-        localStorage.setItem("theme", "light");
-        return false;
-      }
-    });
+
+    const currentTheme = !isDark;
+
+    if (currentTheme) {
+      root.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+      setDark(currentTheme);
+    } else {
+      root.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+      setDark(currentTheme);
+    }
+
+    const metaTag = document.querySelector("meta[name='theme-color']");
+    if (metaTag) {
+      metaTag.setAttribute("content", currentTheme ? "#0a0a0a" : "#ffffff");
+    }
   };
 
   useEffect(() => {
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme === "dark") {
-      const root = window.document.documentElement;
-      root.classList.add("dark");
+    const theme = localStorage.getItem("theme");
+    if (theme === "dark") {
       setDark(true);
-      localStorage.setItem("theme", "dark");
     }
   }, []);
 

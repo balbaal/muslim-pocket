@@ -12,6 +12,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Noto_Naskh_Arabic } from "next/font/google";
 import "./globals.css";
 import SchemaJsonLd from "@/components/SchemaJsonLd";
+import { getThemeSelected } from "@/lib/getTheme";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -52,25 +53,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="id" suppressHydrationWarning>
+    <html lang="id" suppressHydrationWarning className="bg-white dark:bg-dark-900">
       <head>
+        <meta name="theme-color" content="#ffffff" />
         <meta name="apple-mobile-web-app-title" content="Muslimpocket.id" />
         {/* TODO(schema jsonld): MAKE IT DYNAMIC DATA BASED ON EACH PAGE */}
         <SchemaJsonLd />
+
+        {/* TODO(line: 56): THIS CODES STILL AFFECT THE HYDRATION RENDER, FOR WHILE "ignore hydration warning" */}
         <script
           dangerouslySetInnerHTML={{
-            __html: `(() => {
-              const theme = localStorage.getItem("theme")
-
-              if (theme === 'dark') {
-                document.documentElement.classList.add('dark');
-              }
-            })()`,
+            __html: getThemeSelected,
           }}
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${arabicFont.variable} antialiased dark:bg-dark-900`}
+        className={`${geistSans.variable} ${geistMono.variable} ${arabicFont.variable} antialiased`}
       >
         <QueryProvider>
           <PrayerFetcher />
