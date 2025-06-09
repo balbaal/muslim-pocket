@@ -57,6 +57,17 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-title" content="Muslimpocket.id" />
         {/* TODO(schema jsonld): MAKE IT DYNAMIC DATA BASED ON EACH PAGE */}
         <SchemaJsonLd />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(() => {
+              const theme = localStorage.getItem("theme")
+
+              if (theme === 'dark') {
+                document.documentElement.classList.add('dark');
+              }
+            })()`,
+          }}
+        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${arabicFont.variable} antialiased dark:bg-dark-900`}
