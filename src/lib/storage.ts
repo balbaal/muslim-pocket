@@ -3,6 +3,7 @@ import { FavoriteSurah } from "@/types/favorite";
 
 const CHECKPOINT_STORAGE_NAME: string = "last-read-surah";
 const FAVORITE_STORAGE_NAME: string = "favorite-surah";
+const THEME_STORAGE_NAME: string = "theme";
 
 /**
  * CHECKPOINT VERSE / AYAT
@@ -26,4 +27,16 @@ export const setFavorite = (favoriteData: FavoriteSurah[]) => {
 export const getFavorite = (): FavoriteSurah[] => {
   const favoriteList = localStorage.getItem(FAVORITE_STORAGE_NAME);
   return favoriteList ? JSON.parse(favoriteList) : [];
+};
+
+/**
+ * THEME COLOR
+ */
+export const setTheme = (value: string) => {
+  localStorage.setItem(THEME_STORAGE_NAME, value);
+};
+
+export const getTheme = (): string => {
+  const theme = localStorage.getItem(THEME_STORAGE_NAME);
+  return theme || "light";
 };

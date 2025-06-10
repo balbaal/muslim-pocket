@@ -19,13 +19,13 @@ export const metadata: Metadata = {
 
 const About = () => {
   return (
-    <main className="w-full p-4 flex flex-col gap-4">
-      <h1 className="text-2xl font-bold text-black flex items-center gap-2">
+    <main className="w-full p-4 flex flex-col gap-4 text-black dark:text-white">
+      <h1 className="text-2xl font-bold flex items-center gap-2">
         🍉 <span>Tentang Muslim Pocket</span>
       </h1>
 
-      <article className="p-4 rounded-lg bg-gray-100 shadow flex flex-col gap-4">
-        <p className="text-base text-black">
+      <article className="p-4 rounded-lg bg-gray-100 dark:bg-dark-800 shadow flex flex-col gap-4">
+        <p className="text-base ">
           <Link href="/">
             <strong>
               <u className="text-blue-700">Muslim Pocket</u>
@@ -34,19 +34,19 @@ const About = () => {
           adalah bentuk kecil kontribusi saya untuk umat muslim — sebuah ruang sederhana yang saya
           bangun untuk membantu kita lebih mudah mengingat Allah, di mana pun dan kapan pun.
         </p>
-        <p className="text-black">
+        <p>
           Saya percaya bahwa teknologi bisa menjadi jalan menuju kebaikan, dan semoga setiap fitur
-          di dalamnya sekecil apa pun bisa menjadi manfaat yang terus mengalir.
+          di dalamnya sekecil apa pun bisa menjadi <u>manfaat</u> yang terus mengalir.
         </p>
-        <p className="text-black">
+        <p>
           Semoga Muslim Pocket ini bisa menjadi <u>amal jariah</u>, insyaAllah.
         </p>
 
         <section>
-          <h2 className="text-base text-black font-bold">
+          <h2 className="text-base  font-bold">
             ✨ <span>Yang kami hadirkan:</span>
           </h2>
-          <ul className="text-black text-base list-disc pl-9">
+          <ul className=" text-base list-disc pl-9">
             <li>Al-Qur’an digital yang nyaman dibaca</li>
             <li>Waktu sholat harian yang akurat</li>
             <li>Desain ringan dan ramah perangkat mobile</li>
@@ -55,14 +55,14 @@ const About = () => {
         </section>
 
         <section>
-          <h2 className="text-base text-black font-bold">
+          <h2 className="text-base  font-bold">
             📚 <span>Sumber Data:</span>
           </h2>
-          <p className="text-black ml-5.5">
+          <p className=" ml-5.5">
             Kami sangat berterima kasih kepada para kontributor dan komunitas yang telah membuka
             akses data Islami dengan bebas:
           </p>
-          <ul className="text-black text-base list-disc pl-9">
+          <ul className=" text-base list-disc pl-9">
             <li>
               <Link
                 className="text-blue-700"
@@ -97,7 +97,7 @@ const About = () => {
             </li>
           </ul>
         </section>
-        <p className="text-black">
+        <p>
           Muslim Pocket proyek terbuka yang dikembangkan dengan cinta dan keikhlasan. Kontribusi,
           kritik, atau bintang dari kamu sangat berarti. Lihat kode sumbernya di:{" "}
           <Link

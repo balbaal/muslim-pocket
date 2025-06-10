@@ -27,12 +27,12 @@ const Pagination = ({ currentSurah, listSurah }: PaginationProps) => {
   }
 
   return (
-    <div className="text-black flex items-center gap-2 justify-between">
+    <div className="text-black dark:text-white flex items-center gap-2 justify-between">
       <Link
         href={`/surah/${previousSurahNumber}`}
-        className="bg-gray-100 rounded px-4 py-1.5 hover:bg-gray-200 flex items-center gap-2"
+        className="bg-gray-100 dark:bg-dark-800 rounded px-4 py-1.5 flex items-center gap-2"
       >
-        <Icon name="arrow-forward" size={20} className="text-black rotate-180" />
+        <Icon name="arrow-forward" size={20} className="text-black dark:text-white rotate-180" />
         {getSurahName(previousSurahNumber.toString())}
       </Link>
       <p>
@@ -40,10 +40,10 @@ const Pagination = ({ currentSurah, listSurah }: PaginationProps) => {
       </p>
       <Link
         href={`/surah/${nextSurahNumber}`}
-        className="bg-gray-100 rounded px-4 py-1.5 hover:bg-gray-200 flex items-center gap-2"
+        className="bg-gray-100 dark:bg-dark-800 rounded px-4 py-1.5 flex items-center gap-2"
       >
         {getSurahName(nextSurahNumber.toString())}
-        <Icon name="arrow-forward" size={20} className="text-gray-600" />
+        <Icon name="arrow-forward" size={20} className="text-black dark:text-white" />
       </Link>
     </div>
   );

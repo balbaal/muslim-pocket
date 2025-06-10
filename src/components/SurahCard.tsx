@@ -26,21 +26,24 @@ const SurahCard: React.FC<SurahCardProps> = ({
   handleToggleFavorite,
 }) => {
   return (
-    <Link href={`/surah/${number}`} className="rounded-lg p-4 bg-gray-100 flex gap-4">
+    <Link
+      href={`/surah/${number}`}
+      className="bg-gray-100 dark:bg-dark-800 rounded-lg p-4 flex gap-4 text-black dark:text-white"
+    >
       <div className="flex items-start">
-        <p className="font-arabic mt-1 text-xl font-bold text-black border border-gray-300 bg-white rounded-full flex items-center justify-center w-8 h-8">
+        <p className="font-arabic mt-1 text-xl font-bold border border-gray-300 bg-white dark:bg-dark-800 rounded-full flex items-center justify-center w-8 h-8">
           {toArabicNumber(number)}
         </p>
       </div>
       <div className="flex flex-1 flex-col gap-2">
         <div className="flex items-center justify-between">
           <div className="flex flex-col">
-            <p className="font-bold text-black">{name_latin}</p>
-            <p className="text-xs text-gray-700">
+            <p className="font-bold">{name_latin}</p>
+            <p className="text-xs text-gray-700 dark:text-gray-300">
               {translation_name} • {number_of_ayah} Ayat
             </p>
           </div>
-          <p className="font-arabic font-bold text-2xl text-black">{name}</p>
+          <p className="font-arabic font-bold text-2xl">{name}</p>
         </div>
         <div className="flex items-center justify-between">
           <p

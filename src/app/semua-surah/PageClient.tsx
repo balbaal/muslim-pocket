@@ -67,7 +67,7 @@ const PageClient = () => {
         <Breadcrumb breadcrumb={generateBreadcrumb(pathname)} />
         <Input
           type="text"
-          prefix={<Icon name="search-outline" className="text-black" size={20} />}
+          prefix={<Icon name="search-outline" className="text-black dark:text-white" size={20} />}
           placeholder="Cari surah apa ?"
           onChange={onHandleSearch}
         />

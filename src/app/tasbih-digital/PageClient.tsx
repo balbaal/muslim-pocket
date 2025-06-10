@@ -19,8 +19,8 @@ const PageClient = () => {
   };
 
   return (
-    <div className="flex flex-col gap-10 items-center">
-      <div className="flex flex-col items-center text-black select-none">
+    <div className="flex flex-col gap-10 items-center text-black dark:text-white">
+      <div className="flex flex-col items-center select-none">
         <p className="font-arabic font-bold text-xl">سُبْحَانَ اللّهِ</p>
         <p className="text-8xl flex items-center justify-center gap-2">
           {counter} <span className="text-xl font-bold">X</span>
@@ -31,21 +31,29 @@ const PageClient = () => {
           aria-label="button-increment"
           whileTap={{ scale: 0.8 }}
           onClick={() => handleToggleTasbih(counter + 1)}
-          className="flex items-center justify-center p-6 bg-gray-200 rounded-full cursor-pointer border-6 border-white absolute top-0"
+          className="flex items-center justify-center p-6 bg-gray-200 dark:bg-dark-800 rounded-full cursor-pointer border-6 border-white dark:border-dark-900 absolute top-0"
         >
-          <Icon name="chevron-forward-outline" size={150} className="text-black -rotate-90" />
+          <Icon
+            name="chevron-forward-outline"
+            size={150}
+            className="text-black dark:text-white -rotate-90"
+          />
         </motion.button>
         <motion.button
           aria-label="button-decrement"
           whileTap={{ scale: 0.8 }}
           onClick={() => handleToggleTasbih(counter - 1)}
-          className="flex items-center justify-center p-6 bg-gray-200 rounded-full cursor-pointer border-6 border-white absolute top-40"
+          className="flex items-center justify-center p-6 bg-gray-200 dark:bg-dark-800 rounded-full cursor-pointer border-6 border-white dark:border-dark-900 absolute top-40"
         >
-          <Icon name="chevron-forward-outline" size={40} className="text-black rotate-90" />
+          <Icon
+            name="chevron-forward-outline"
+            size={40}
+            className="text-black dark:text-white rotate-90"
+          />
         </motion.button>
       </div>
       <button
-        className="text-black px-6 font-bold py-1.5 bg-gray-200 rounded-full cursor-pointer select-none mt-66"
+        className="px-6 font-bold py-1.5 bg-gray-200 dark:bg-dark-800 rounded-full cursor-pointer select-none mt-66"
         onClick={resetCounter}
       >
         Mulai Lagi

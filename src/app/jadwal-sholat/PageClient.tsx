@@ -10,7 +10,7 @@ const PageClient = () => {
   return (
     <div className="flex flex-col gap-6">
       {!!timeZone && (
-        <div className="text-gray-700 flex text-sm -mt-6">
+        <div className="text-gray-700 dark:text-gray-300 flex text-sm -mt-6">
           <p className="ml-8">{timeZone}</p>
         </div>
       )}

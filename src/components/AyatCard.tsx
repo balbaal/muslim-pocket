@@ -30,10 +30,10 @@ const AyatCard: React.FC<AyatCardProps> = ({
 }) => {
   return (
     <div
-      className={`bg-gray-50 rounded-lg p-4 hover:bg-gray-100 flex flex-col gap-4 ${isCheckpoint ? "bg-green-100 border border-green-500 hover:bg-green-100" : ""}`}
+      className={`bg-gray-100 dark:bg-dark-800 text-black dark:text-white rounded-lg p-4 flex flex-col gap-4 ${isCheckpoint ? "bg-green-100 dark:bg-green-900 border border-green-500" : ""}`}
     >
-      <p className="text-right text-black font-arabic font-bold text-2xl">{arabicText}</p>
-      <em className="text-xs text-black">{translationText}</em>
+      <p className="text-right font-arabic font-bold text-2xl">{arabicText}</p>
+      <em className="text-xs">{translationText}</em>
       <div className="flex justify-between items-center">
         <div className="flex gap-4 items-center">
           <motion.button
@@ -42,7 +42,7 @@ const AyatCard: React.FC<AyatCardProps> = ({
             onClick={onClickCopy}
             className="cursor-pointer"
           >
-            <Icon name="copy" size={20} className="text-gray-600" />
+            <Icon name="copy" size={20} className="text-gray-600 dark:text-white" />
           </motion.button>
           <motion.button
             aria-label="button-share"
@@ -50,7 +50,7 @@ const AyatCard: React.FC<AyatCardProps> = ({
             onClick={onClickShare}
             className="cursor-pointer"
           >
-            <Icon name="rocket" size={20} className="text-gray-600" />
+            <Icon name="rocket" size={20} className="text-gray-600 dark:text-white" />
           </motion.button>
           <motion.button
             aria-label="button-pin"
@@ -58,10 +58,12 @@ const AyatCard: React.FC<AyatCardProps> = ({
             onClick={onClickPin}
             className="cursor-pointer"
           >
-            <Icon name="pin" size={20} className="text-gray-600 " />
+            <Icon name="pin" size={20} className="text-gray-600 dark:text-white" />
           </motion.button>
         </div>
-        <p className="select-none font-arabic mt-1 text-xl font-bold text-black border border-gray-300 bg-white rounded-full flex items-center justify-center w-8 h-8">
+        <p
+          className={`select-none font-arabic mt-1 text-xl font-bold border border-gray-300 bg-white dark:bg-dark-800 ${isCheckpoint ? "dark:border-0" : ""} rounded-full flex items-center justify-center w-8 h-8`}
+        >
           {toArabicNumber(ayatNumber)}
         </p>
       </div>
