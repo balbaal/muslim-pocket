@@ -10,7 +10,7 @@ const Header = () => {
   const { isMenuOpen, toggleMenu } = useMenuStore();
 
   return (
-    <header className="flex items-center justify-between border-b border-gray-200 dark:border-0 px-4 py-3">
+    <header className="flex items-center justify-between border-b dark:border-b-[1px] border-gray-200 dark:border-[#181818] px-4 py-3">
       <button aria-label="action-button-sidebar" onClick={toggleMenu} className="cursor-pointer">
         {isMenuOpen ? (
           <Icon
