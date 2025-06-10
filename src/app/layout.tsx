@@ -72,7 +72,7 @@ export default function RootLayout({
       >
         <QueryProvider>
           <PrayerFetcher />
-          <section className="w-full max-w-[500px] mx-auto bg-white dark:bg-dark-900 shadow-xl">
+          <section className="w-full max-w-[500px] mx-auto bg-white dark:bg-dark-900 shadow-xl dark:shadow-[#181818]">
             <SidebarContainer />
             <Header />
             <PrayerFloating />

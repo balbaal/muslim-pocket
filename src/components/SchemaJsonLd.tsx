@@ -10,7 +10,7 @@ const SchemaJsonLd = () => {
     "@type": "WebSite",
     url: "https://muslimpocket.id",
     name: "Baca Qur'an Indonesia",
-    alternateName: "Qur'an Digital Gratis",
+    alternateName: "Muslim Pocket",
     description: metadataMap.home.description,
     image: "https://muslimpocket.id/icon.png",
     inLanguage: "id",

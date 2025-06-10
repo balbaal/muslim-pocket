@@ -28,7 +28,7 @@ const About = () => {
         <p className="text-base ">
           <Link href="/">
             <strong>
-              <u className="text-blue-700">Muslim Pocket</u>
+              <u className="text-blue-700 dark:text-blue-400">Muslim Pocket</u>
             </strong>
           </Link>{" "}
           adalah bentuk kecil kontribusi saya untuk umat muslim — sebuah ruang sederhana yang saya
@@ -65,7 +65,7 @@ const About = () => {
           <ul className=" text-base list-disc pl-9">
             <li>
               <Link
-                className="text-blue-700"
+                className="text-blue-700 dark:text-blue-400"
                 href="https://github.com/rioastamal/quran-json"
                 target="_blank"
               >
@@ -73,7 +73,7 @@ const About = () => {
               </Link>{" "}
               oleh{" "}
               <Link
-                className="text-blue-700"
+                className="text-blue-700 dark:text-blue-400"
                 href="https://www.linkedin.com/in/rioastamal"
                 target="_blank"
               >
@@ -83,7 +83,7 @@ const About = () => {
             </li>
             <li>
               <Link
-                className="text-blue-700"
+                className="text-blue-700 dark:text-blue-400"
                 href="https://aladhan.com/prayer-times-api"
                 target="_blank"
               >
@@ -101,7 +101,7 @@ const About = () => {
           Muslim Pocket proyek terbuka yang dikembangkan dengan cinta dan keikhlasan. Kontribusi,
           kritik, atau bintang dari kamu sangat berarti. Lihat kode sumbernya di:{" "}
           <Link
-            className="text-blue-700 underline"
+            className="text-blue-700 dark:text-blue-400 underline"
             href="https://github.com/balbaal/muslim-pocket"
             target="_blank"
           >

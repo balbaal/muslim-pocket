@@ -31,7 +31,7 @@ const Sidebar = () => {
   ];
 
   return (
-    <aside className="border-r border-gray-200 dark:border-0 h-full flex flex-col justify-between p-4">
+    <aside className="border-r border-gray-200 dark:border-[#181818] h-full flex flex-col justify-between p-4">
       <nav>
         <ul className="flex flex-col gap-6">
           {menuItems.map((item) => {
@@ -51,7 +51,9 @@ const Sidebar = () => {
           })}
         </ul>
       </nav>
-      <p className="text-sm font-medium underline text-gray-900 dark:text-white">Muslimpocket.id</p>
+      <Link href="/" className="text-sm font-medium underline text-gray-900 dark:text-white">
+        Muslimpocket.id
+      </Link>
     </aside>
   );
 };
