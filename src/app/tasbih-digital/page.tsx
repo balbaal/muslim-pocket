@@ -28,7 +28,7 @@ export const metadata: Metadata = {
 const TasbihDigital = () => {
   return (
     <main className="p-4 w-full flex flex-col gap-6 text-black dark:text-white">
-      <h1 className="text-2xl font-bold flex gap-2 items-center">
+      <h1 className="text-2xl font-bold flex gap-2 items-center select-none">
         🛐 <span>Tasbih Digital</span>
       </h1>
       <PageClient />

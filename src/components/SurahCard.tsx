@@ -1,11 +1,11 @@
 "use client";
 
-import React from "react";
+import React, { useCallback } from "react";
 import { SurahItemPreview } from "@/types/surah";
 import Link from "next/link";
 import Icon from "./Icons";
 import { toArabicNumber } from "@/lib/transformString";
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 
 type HandleToggleFavorite = (event: React.MouseEvent) => void;
 
@@ -25,6 +25,18 @@ const SurahCard: React.FC<SurahCardProps> = ({
   isFavorite,
   handleToggleFavorite,
 }) => {
+  const controls = useAnimation();
+  const triggerAnimation = useCallback(() => {
+    controls.start({
+      scale: [1, 1.5, 1],
+      transition: { duration: 0.4 },
+    });
+
+    if (navigator?.vibrate) {
+      navigator.vibrate(200);
+    }
+  }, [controls]);
+
   return (
     <Link
       href={`/surah/${number}`}
@@ -52,7 +64,8 @@ const SurahCard: React.FC<SurahCardProps> = ({
             {revelation_type}
           </p>
           <motion.button
-            whileTap={{ scale: 1.5 }}
+            onTap={triggerAnimation}
+            animate={controls}
             onClick={handleToggleFavorite}
             className="cursor-pointer"
             aria-label="button-favorite"

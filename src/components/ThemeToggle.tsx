@@ -52,7 +52,7 @@ export default function ThemeToggle() {
       animate={controls}
       aria-label="toggle-switch-theme"
       onClick={handleToggleTheme}
-      className="text-lg cursor-pointer w-7 h-7 bg-gray-300 dark:bg-gray-700 text-black rounded"
+      className="text-lg cursor-pointer w-7 h-7 bg-gray-300 dark:bg-gray-700 text-black rounded select-none"
     >
       {isDark ? "🌞" : "🌒"}
     </motion.button>
