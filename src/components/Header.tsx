@@ -27,7 +27,7 @@ const Header = () => {
         )}
       </button>
       <Link href="/" className="cursor-pointer">
-        <p className="text-xl font-bold text-black dark:text-white">Muslimpocket.id</p>
+        <p className="text-xl font-bold text-black dark:text-white select-none">Muslimpocket.id</p>
       </Link>
       <ThemeToggle />
     </header>
