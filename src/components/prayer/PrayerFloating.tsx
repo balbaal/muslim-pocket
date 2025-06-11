@@ -8,7 +8,6 @@ import { motion, useAnimation } from "framer-motion";
 
 const PrayerFloating = () => {
   const prayer = usePrayerStore((state) => state.nextPrayer);
-
   const controls = useAnimation();
 
   const triggerShake = useCallback(() => {
