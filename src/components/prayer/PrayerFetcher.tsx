@@ -9,6 +9,7 @@ import {
   getPrayerSchedule as getPrayerScheduleStorage,
   setPrayerSchedule as setPrayerScheduleStorage,
 } from "@/lib/storage";
+import { mappingPrayerNameIndonesia, prayerNameAllowed, PrayerNameType } from "@/data/prayer";
 
 const PrayerFetcher = () => {
   const { refetch } = useQueryPrayerSchedule();
@@ -38,7 +39,9 @@ const PrayerFetcher = () => {
       // If no next prayer found today (after Isha), get tomorrow's Fajr
       const tomorrowDay = date.getDate() + 1;
       const prayerTomorrow = result.find((item) => item.date.day === tomorrowDay);
-      const fajrTomorrow = prayerTomorrow?.prayerTime.find((item) => item.name === "Fajr");
+      const fajrTomorrow = prayerTomorrow?.prayerTime.find(
+        (item) => item.name === mappingPrayerNameIndonesia?.Fajr
+      );
 
       if (fajrTomorrow) {
         setNextPrayer({
@@ -51,15 +54,6 @@ const PrayerFetcher = () => {
   };
 
   const mappingPrayerSchedule = (data: PrayerScheduleResponse["data"]) => {
-    const allowedPrayerName = ["Fajr", "Dhuhr", "Asr", "Maghrib", "Isha"];
-    const mappingNameIndonesia: Record<string, string> = {
-      Fajr: "Subuh",
-      Dhuhr: "Dzuhur",
-      Asr: "Ashar",
-      Maghrib: "Maghrib",
-      Isha: "Isya",
-    };
-
     const timeZone = data[0]?.meta?.timezone || "";
     const result = data.map(
       (z): PrayerDate => ({
@@ -72,13 +66,13 @@ const PrayerFetcher = () => {
         readableDate: z.date.readable,
         timestamps: z.date.timestamp,
         prayerTime: Object.entries(z.timings)
-          .filter(([key]) => allowedPrayerName.includes(key))
+          .filter(([key]) => prayerNameAllowed.includes(key as PrayerNameType))
           .map(([key, val]) => {
             const time = val.split(" ")?.[0];
             const timeString = `${z.date.gregorian.year}-${String(z.date.gregorian.month.number).padStart(2, "0")}-${z.date.gregorian.day}T${time}:00`;
 
             return {
-              name: mappingNameIndonesia[key] || "-",
+              name: mappingPrayerNameIndonesia[key as PrayerNameType] || "-",
               time: time,
               timestamps: String(new Date(timeString).getTime()),
             };
