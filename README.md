@@ -2,17 +2,19 @@
 
 **Muslim Pocket** is a modern web-based Qur'an reader built with [Next.js 15](https://nextjs.org/blog/next-15). It provides easy access to the Qur'an online with a clean UI and simple navigation.
 
-_PageSpeed Insights: Mobile_
-![Mobile Score](http://muslimpocket.id/assets/score-mobile.png)
-
-_PageSpeed Insights: Desktop Score_
-![Desktop Score](http://muslimpocket.id/assets/score-desktop.png)
-
 ---
 
 ## ⚡ Performance
 
 - Delivered a fast and responsive experience by maintaining **performance** and **SEO** scores consistently above **90 🟩**, ensuring quick load times, smooth interactions across devices, and high search engine visibility.
+
+![Desktop Score](http://muslimpocket.id/assets/score-desktop.png)
+
+<p align="center">PageSpeed Insights: Desktop</p>
+
+![Mobile Score](http://muslimpocket.id/assets/score-mobile.png)
+
+<p align="center">PageSpeed Insights: Mobile</p>
 
 ---
 
