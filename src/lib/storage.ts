@@ -48,7 +48,6 @@ export const getTheme = (): string => {
  */
 
 export const setPrayerSchedule = (prayer: DailyPrayerData[]) => {
-  console.log(prayer, ">>> test");
   localStorage.setItem(PRAYER_STORAGE_NAME, JSON.stringify(prayer));
 };
 

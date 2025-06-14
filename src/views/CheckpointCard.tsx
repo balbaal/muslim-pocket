@@ -16,12 +16,13 @@ const CheckpointCard = () => {
 
   if (!checkpoint) {
     return (
-      <div className="flex flex-col gap-2 shadow rounded-lg p-4 bg-gray-100 text-black dark:bg-dark-800 dark:text-white">
-        <Link href="/semua-surah" className="flex items-center justify-between">
-          <p>Belum ada, Ayo mulai baca Surah 🔥</p>
-          <Icon name="arrow-forward" size={20} />
-        </Link>
-      </div>
+      <Link
+        href="/semua-surah"
+        className="h-[84px] flex items-center justify-between w-full shadow rounded-lg p-4 bg-gray-100 text-black dark:bg-dark-800 dark:text-white"
+      >
+        <p>Belum ada, Ayo mulai baca Surah 🔥</p>
+        <Icon name="arrow-forward" size={20} />
+      </Link>
     );
   }
 

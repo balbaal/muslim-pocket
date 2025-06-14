@@ -110,6 +110,8 @@ const PrayerFetcher = () => {
       mappingPrayerSchedule(prayerSchedule);
       setIsloadingPrayer(false);
       return;
+    } else if (!prayerSchedule?.length) {
+      setNextPrayer({ name: "Menghadap Allah", time: "00:00", timestamps: "" });
     }
 
     if (pathname === "/jadwal-sholat") {

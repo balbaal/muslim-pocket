@@ -4,7 +4,7 @@ import { useCallback, useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 
 export default function ThemeToggle() {
-  const [isDark, setDark] = useState(false);
+  const [isDark, setDark] = useState<boolean | null>(null);
   const controls = useAnimation();
 
   const handleToggleTheme = () => {
@@ -41,10 +41,19 @@ export default function ThemeToggle() {
 
   useEffect(() => {
     const theme = localStorage.getItem("theme");
-    if (theme === "dark") {
+    if (theme === "dark" || !theme) {
       setDark(true);
+    } else {
+      setDark(false);
     }
   }, []);
+
+  if (isDark === null)
+    return (
+      <div className="text-lg cursor-pointer w-7 h-7 bg-gray-300 dark:bg-gray-700 rounded select-none">
+        <svg className="mr-3 size-5 animate-spin ..." viewBox="0 0 24 24"></svg>
+      </div>
+    );
 
   return (
     <motion.button
