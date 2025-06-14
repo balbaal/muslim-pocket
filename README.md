@@ -2,6 +2,18 @@
 
 **Muslim Pocket** is a modern web-based Qur'an reader built with [Next.js 15](https://nextjs.org/blog/next-15). It provides easy access to the Qur'an online with a clean UI and simple navigation.
 
+_PageSpeed Insights: Mobile_
+![Mobile Score](http://muslimpocket.id/assets/score-mobile.png)
+
+_PageSpeed Insights: Desktop Score_
+![Desktop Score](http://muslimpocket.id/assets/score-desktop.png)
+
+---
+
+## ⚡ Performance
+
+- Delivered a fast and responsive experience by maintaining **performance** and **SEO** scores consistently above **90 🟩**, ensuring quick load times, smooth interactions across devices, and high search engine visibility.
+
 ---
 
 ## ⚙️ Requirements
@@ -53,11 +65,15 @@ This project uses open-source **Qur'an data** from:
 - 📚 GitHub Repository: [rioastamal/quran-json](https://github.com/rioastamal/quran-json)
 - 🧑‍💼 Created by: [Rio Astamal](https://www.linkedin.com/in/rioastamal/)
 
+And also use **API** to fetch daily prayer schedules based on location:
+
+- 🕋 API Provider: [Aladhan.com](https://aladhan.com)
+
 We appreciate the work and contributions from the open-source community!
 
 ---
 
-## 📁 Project Structure (WIP)
+## 📁 Project Structure
 
 This is a Next.js 15 project using the **App Router**.
 
