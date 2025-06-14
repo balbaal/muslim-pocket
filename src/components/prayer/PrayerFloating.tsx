@@ -5,6 +5,7 @@ import { usePrayerStore } from "@/store/prayerStore";
 import Icon from "../Icons";
 import Link from "next/link";
 import { motion, useAnimation } from "framer-motion";
+import Loader from "../Loader";
 
 const PrayerFloating = () => {
   const prayer = usePrayerStore((state) => state.nextPrayer);
@@ -28,13 +29,21 @@ const PrayerFloating = () => {
         <motion.div
           onTap={triggerShake}
           animate={controls}
-          className="min-w-[170px] select-none flex items-center justify-between gap-4 rounded-full bg-orange-100 px-3 py-2 shadow-lg text-orange-700 text-xs"
+          className="min-w-[170px] select-none flex items-center justify-between gap-4 h-[34px] rounded-full bg-orange-100 px-3 py-2 shadow-lg text-orange-700 text-xs"
         >
-          <p className="flex gap-1 items-center">
-            <Icon name="alarm-outline" size={18} className="text-orange-700" />
-            <span className="font-bold">{prayer?.name}</span>
-          </p>
-          <p className="font-bold">{prayer?.time}</p>
+          {prayer === null ? (
+            <div className="w-full flex items-center justify-center">
+              <Loader className="text-orange-700 w-3" />
+            </div>
+          ) : (
+            <>
+              <p className="flex gap-1 items-center">
+                <Icon name="alarm-outline" size={18} className="text-orange-700" />
+                <span className="font-bold">{prayer?.name}</span>
+              </p>
+              <p className="font-bold">{prayer?.time}</p>
+            </>
+          )}
         </motion.div>
       </Link>
     </div>

@@ -19,6 +19,37 @@
   }
 }
 
+@keyframes loader {
+  0% {
+    box-shadow:
+      20px 0 currentColor,
+      -20px 0 currentColor;
+    background: currentColor;
+  }
+  33% {
+    box-shadow:
+      20px 0 currentColor,
+      -20px 0 #0002;
+    background: #0002;
+  }
+  66% {
+    box-shadow:
+      20px 0 #0002,
+      -20px 0 currentColor;
+    background: #0002;
+  }
+  100% {
+    box-shadow:
+      20px 0 #0002,
+      -20px 0 currentColor;
+    background: currentColor;
+  }
+}
+
+.animate-loader {
+  animation: loader 1s infinite linear alternate;
+}
+
 @custom-variant dark (&:where(.dark, .dark *));
 
 .animate-slide-up {

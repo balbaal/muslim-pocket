@@ -55,7 +55,7 @@ export default function RootLayout({
   return (
     <html lang="id" suppressHydrationWarning className="bg-white dark:bg-dark-900">
       <head>
-        <meta name="theme-color" content="#ffffff" />
+        <meta name="theme-color" content="#0a0a0a" />
         <meta name="apple-mobile-web-app-title" content="Muslimpocket.id" />
         {/* TODO(schema jsonld): MAKE IT DYNAMIC DATA BASED ON EACH PAGE */}
         <SchemaJsonLd />

@@ -12,7 +12,7 @@ const FavoriteCard = () => {
     return (
       <Link
         href="/semua-surah"
-        className="flex items-center justify-between w-full shadow rounded-lg p-4 bg-gray-100 text-black dark:bg-dark-800 dark:text-white"
+        className="h-[84px] flex items-center justify-between w-full shadow rounded-lg p-4 bg-gray-100 text-black dark:bg-dark-800 dark:text-white"
       >
         <p>Kamu belum punya Surah favorit 🔥</p>
         <Icon name="arrow-forward" size={20} />
