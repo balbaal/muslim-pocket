@@ -1,7 +1,7 @@
 import React from "react";
 
 type LoaderProps = {
-  className?: string; // Contoh: 'text-blue-500'
+  className?: string;
 };
 
 const Loader: React.FC<LoaderProps> = ({ className = "w-4" }) => {
