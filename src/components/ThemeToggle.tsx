@@ -48,13 +48,6 @@ export default function ThemeToggle() {
     }
   }, []);
 
-  if (isDark === null)
-    return (
-      <div className="text-lg cursor-pointer w-7 h-7 bg-gray-300 dark:bg-gray-700 rounded select-none">
-        <svg className="mr-3 size-5 animate-spin ..." viewBox="0 0 24 24"></svg>
-      </div>
-    );
-
   return (
     <motion.button
       onTap={triggerAnimate}
@@ -63,7 +56,8 @@ export default function ThemeToggle() {
       onClick={handleToggleTheme}
       className="text-lg cursor-pointer w-7 h-7 bg-gray-300 dark:bg-gray-700 text-black rounded select-none"
     >
-      {isDark ? "🌞" : "🌒"}
+      <span className="hidden dark:block">🌒</span>
+      <span className="block dark:hidden">🌞</span>
     </motion.button>
   );
 }
