@@ -4,16 +4,9 @@ import SurahCard from "@/components/SurahCard";
 import { surahRevelation } from "@/data/surah-revelation";
 import { useFavoriteSurah } from "@/hooks/useFavoriteSurah";
 
-const ListView = ({
-  surahList,
-  isSearching,
-}: {
-  surahList: SurahItemPreview[];
-  isSearching: boolean;
-}) => {
+const ListView = ({ surahList }: { surahList: SurahItemPreview[] }) => {
   const { isFavorite, toggleFavorite } = useFavoriteSurah();
-
-  if (surahList.length === 0 && isSearching) {
+  if (surahList.length === 0) {
     return <p className="text-center text-gray-400">Tidak ada surah yang ditemukan.</p>;
   }
 
