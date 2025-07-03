@@ -4,6 +4,28 @@
 
 ---
 
+## 🔎 Google Search Visibility
+
+- Muslim Pocket has been **successfully** indexed on **Google Search** in <u>less than a week</u> after launch, showing good search engine visibility with proper SEO practices, sitemap configuration, and structured metadata. This ensures that users can find Muslim Pocket more easily on search engines.
+
+![Google Page Result](http://muslimpocket.id/assets/google-search-visibility-3.png)
+
+<p align="center">Google Page Result</p>
+
+![Google Search Console - Highlight](http://muslimpocket.id/assets/google-search-visibility-1.png)
+
+<p align="center">Google Search Console - Highlight</p>
+
+![Google Search Console - Page Link Visibility](http://muslimpocket.id/assets/google-search-visibility-2.png)
+
+<p align="center">Google Search Console - Page Link Visibility</p>
+
+![Google Search Console - Total Indexed Page](http://muslimpocket.id/assets/google-search-visibility-4.png)
+
+<p align="center">Google Search Console - Total Indexed Page</p>
+
+---
+
 ## ⚡ Performance
 
 - Delivered a fast and responsive experience by maintaining **performance** and **SEO** scores consistently above **90 🟩**, ensuring quick load times, smooth interactions across devices, and high search engine visibility.
