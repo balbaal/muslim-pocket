@@ -1,3 +1,4 @@
+import { getSurahSlugById } from "@/lib/utils";
 import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -6,7 +7,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const surahUrls = Array.from({ length: TOTAL_SURAH }, (_, i) => {
     const nomor = i + 1;
-    return `${baseUrl}/surah/${nomor}`;
+    return `${baseUrl}/surah/${getSurahSlugById(nomor)}`;
   });
 
   const staticUrls = [
