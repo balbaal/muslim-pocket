@@ -4,6 +4,7 @@ import React from "react";
 import { useFavoriteSurah } from "@/hooks/useFavoriteSurah";
 import Link from "next/link";
 import Icon from "@/components/Icons";
+import { getSurahSlugById } from "@/lib/utils";
 
 const FavoriteCard = () => {
   const { favorites } = useFavoriteSurah();
@@ -35,7 +36,7 @@ const FavoriteCard = () => {
       {favorites.map((item) => (
         <Link
           key={item.number}
-          href={`/surah/${item.number}`}
+          href={`/surah/${getSurahSlugById(Number(item.number))}`}
           className="flex items-center justify-between rounded-lg bg-gray-100 text-black dark:bg-dark-800 dark:text-white shadow p-4"
         >
           <div className="flex flex-col">

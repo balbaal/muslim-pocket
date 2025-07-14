@@ -6,6 +6,7 @@ import Link from "next/link";
 import Icon from "./Icons";
 import { toArabicNumber } from "@/lib/transformString";
 import { motion, useAnimation } from "framer-motion";
+import { getSurahSlugById } from "@/lib/utils";
 
 type HandleToggleFavorite = (event: React.MouseEvent) => void;
 
@@ -39,7 +40,7 @@ const SurahCard: React.FC<SurahCardProps> = ({
 
   return (
     <Link
-      href={`/surah/${number}`}
+      href={`/surah/${getSurahSlugById(Number(number))}`}
       className="bg-gray-100 dark:bg-dark-800 rounded-lg p-4 flex gap-4 text-black dark:text-white"
     >
       <div className="flex items-start">

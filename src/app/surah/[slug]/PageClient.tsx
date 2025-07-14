@@ -12,14 +12,17 @@ import { surahList } from "@/data/surah-list";
 import BackToTopContainer from "@/components/backToTop/BackToTopContainer";
 import ContainerListView from "./ContainerListView";
 import { useEffect, useState } from "react";
+import { getSurahIdBySlug } from "@/lib/utils";
 
 const PageClient = () => {
   const [surahData, setSurahData] = useState<SurahItem | null>(null);
   const { isFavorite, toggleFavorite } = useFavoriteSurah();
-  const params = useParams<{ id: string }>();
+  const params = useParams<{ slug: string }>();
+
+  const id = getSurahIdBySlug(params.slug);
 
   const getSurahData = async (): Promise<void> => {
-    const surah = await import(`@/data/surah/${params.id}.ts`);
+    const surah = await import(`@/data/surah/${id}.ts`);
     setSurahData(surah.default);
   };
 
@@ -38,14 +41,14 @@ const PageClient = () => {
   return (
     <div className="flex flex-col gap-6">
       <div className="flex flex-col gap-4">
-        <Breadcrumb breadcrumb={generateBreadcrumb(`/surah/${params.id}`)} />
+        <Breadcrumb breadcrumb={generateBreadcrumb(`/surah/${id}`)} />
         <SurahCard
           number={surahData.number}
           name={surahData.name}
           name_latin={surahData.name_latin}
           translation_name={surahData.translations.id.name}
           number_of_ayah={surahData.number_of_ayah}
-          revelation_type={surahRevelation[params.id]}
+          revelation_type={surahRevelation[id]}
           isFavorite={isFavorite(surahData.number)}
           handleToggleFavorite={() =>
             toggleFavorite({
@@ -58,9 +61,9 @@ const PageClient = () => {
           }
         />
       </div>
-      <Pagination currentSurah={params.id} listSurah={surahList} />
+      <Pagination currentSurah={String(id)} listSurah={surahList} />
       <ContainerListView surahData={surahData} />
-      <Pagination currentSurah={params.id} listSurah={surahList} />
+      <Pagination currentSurah={String(id)} listSurah={surahList} />
       <BackToTopContainer />
     </div>
   );

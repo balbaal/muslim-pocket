@@ -1,3 +1,5 @@
+import { idToSlugMap, slugToIdMap } from "@/data/url-slug-references";
+
 export const debounce = <T extends unknown[], R>(
   func: (...args: T) => R,
   delay: number
@@ -31,4 +33,12 @@ export const getCurrentLatLng = (): Promise<{ lat: number; lng: number }> => {
       }
     );
   });
+};
+
+export const getSurahSlugById = (id: number): string => {
+  return idToSlugMap[id];
+};
+
+export const getSurahIdBySlug = (slug: string): number => {
+  return slugToIdMap[slug];
 };
