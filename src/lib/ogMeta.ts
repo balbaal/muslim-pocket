@@ -15,7 +15,7 @@ export const createOGMeta: createOGMetaType = ({
   description,
   url,
   type,
-  siteName = "Muslim Pocket",
+  siteName = "Muslimpocket.id",
 }) => {
   return {
     title,

@@ -29,6 +29,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"),
     title: metadataTitle,
     description: metadataDescription,
+    alternates: {
+      canonical: `https://muslimpocket.id/surah/${slug}`,
+      languages: {
+        id: `https://muslimpocket.id/surah/${slug}`,
+      },
+    },
     openGraph: createOGMeta({
       title: metadataTitle,
       description: metadataDescription,
