@@ -2,6 +2,7 @@ import { SurahItemPreview as ListSurah } from "@/types/surah";
 import Link from "next/link";
 import React from "react";
 import Icon from "./Icons";
+import { getSurahSlugById } from "@/lib/utils";
 
 interface PaginationProps {
   currentSurah: string;
@@ -29,7 +30,7 @@ const Pagination = ({ currentSurah, listSurah }: PaginationProps) => {
   return (
     <div className="text-black dark:text-white flex items-center gap-2 justify-between">
       <Link
-        href={`/surah/${previousSurahNumber}`}
+        href={`/surah/${getSurahSlugById(previousSurahNumber)}`}
         className="bg-gray-100 dark:bg-dark-800 rounded px-4 py-1.5 flex items-center gap-2"
       >
         <Icon name="arrow-forward" size={20} className="text-black dark:text-white rotate-180" />
@@ -39,7 +40,7 @@ const Pagination = ({ currentSurah, listSurah }: PaginationProps) => {
         {currentSurah} / {listSurah.length}
       </p>
       <Link
-        href={`/surah/${nextSurahNumber}`}
+        href={`/surah/${getSurahSlugById(nextSurahNumber)}`}
         className="bg-gray-100 dark:bg-dark-800 rounded px-4 py-1.5 flex items-center gap-2"
       >
         {getSurahName(nextSurahNumber.toString())}

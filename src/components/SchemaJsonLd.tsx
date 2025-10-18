@@ -9,7 +9,7 @@ const SchemaJsonLd = () => {
     "@context": "https://schema.org",
     "@type": "WebSite",
     url: "https://muslimpocket.id",
-    name: "Muslim Pocket",
+    name: "Muslimpocket.id",
     alternateName: "Muslimpocket.id",
     description: metadataMap.home.description,
     image: "https://muslimpocket.id/icon.png",

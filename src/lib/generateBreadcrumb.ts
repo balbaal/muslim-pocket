@@ -1,5 +1,6 @@
 import { surahList } from "@/data/surah-list";
 import { Breadcrumb } from "@/types/breadcrumb";
+import { getSurahSlugById } from "./utils";
 
 const generateBreadcrumb = (path: string) => {
   const mappingPath: Record<string, Breadcrumb[]> = {
@@ -18,7 +19,7 @@ const generateBreadcrumb = (path: string) => {
     return [
       { label: "Beranda", url: "/" },
       { label: "Semua Surah", url: "/semua-surah" },
-      { label: surah?.name_latin || "-", url: `/surah/${number}` },
+      { label: surah?.name_latin || "-", url: `/surah/${getSurahSlugById(Number(number))}` },
     ];
   }
 

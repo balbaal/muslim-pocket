@@ -4,17 +4,18 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { SurahItem } from "@/types/surah";
 import { createOGMeta } from "@/lib/ogMeta";
+import { getSurahIdBySlug } from "@/lib/utils";
 
 type Props = {
-  params: Promise<{ id: string }>;
+  params: Promise<{ slug: string }>;
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { id } = await params;
+  const { slug } = await params;
   let surahData: SurahItem = {} as SurahItem;
 
   try {
-    const response = await import(`@/data/surah/${id}.ts`);
+    const response = await import(`@/data/surah/${getSurahIdBySlug(slug)}.ts`);
     surahData = response.default;
   } catch (error) {
     console.log(">>> error:", error);
@@ -28,10 +29,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"),
     title: metadataTitle,
     description: metadataDescription,
+    alternates: {
+      canonical: `https://muslimpocket.id/surah/${slug}`,
+      languages: {
+        id: `https://muslimpocket.id/surah/${slug}`,
+      },
+    },
     openGraph: createOGMeta({
       title: metadataTitle,
       description: metadataDescription,
-      url: `https://muslimpocket.id/surah/${id}`,
+      url: `https://muslimpocket.id/surah/${slug}`,
       type: "article",
     }),
   };
