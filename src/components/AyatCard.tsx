@@ -68,7 +68,7 @@ const AyatCard: React.FC<AyatCardProps> = ({
     <div
       className={`bg-gray-100 dark:bg-dark-800 text-black dark:text-white rounded-lg p-4 flex flex-col gap-4 ${isCheckpoint ? "bg-green-100 dark:bg-green-900 border border-green-500" : ""}`}
     >
-      <p className="text-right font-arabic font-bold text-2xl">{arabicText}</p>
+      <p className="text-right arabic-text font-bold text-2xl">{arabicText}</p>
       <em className="text-xs">{translationText}</em>
       <div className="flex justify-between items-center">
         <div className="flex gap-4 items-center">
@@ -101,7 +101,7 @@ const AyatCard: React.FC<AyatCardProps> = ({
           </motion.button>
         </div>
         <p
-          className={`select-none font-arabic mt-1 text-xl font-bold border border-gray-300 bg-white dark:bg-dark-800 ${isCheckpoint ? "dark:border-0" : ""} rounded-full flex items-center justify-center w-8 h-8`}
+          className={`select-none arabic-text mt-1 text-xl font-bold border border-gray-300 bg-white dark:bg-dark-800 ${isCheckpoint ? "dark:border-0" : ""} rounded-full flex items-center justify-center w-8 h-8`}
         >
           {toArabicNumber(ayatNumber)}
         </p>

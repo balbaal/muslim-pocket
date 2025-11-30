@@ -57,6 +57,41 @@ export default function RootLayout({
       <head>
         <meta name="theme-color" content="#0a0a0a" />
         <meta name="apple-mobile-web-app-title" content="Muslimpocket.id" />
+
+        {/* preload huge size font
+        huge size determine on build path result */}
+        <link
+          rel="preload"
+          as="font"
+          type="font/woff2"
+          href="/_next/static/media/ceee54cb6dfb0683-s.woff2"
+          crossOrigin="anonymous"
+        />
+
+        <link
+          rel="preload"
+          as="font"
+          type="font/woff2"
+          href="/_next/static/media/4cf2300e9c8272f7-s.p.woff2"
+          crossOrigin="anonymous"
+        />
+
+        <link
+          rel="preload"
+          as="font"
+          type="font/woff2"
+          href="/_next/static/media/93f479601ee12b01-s.p.woff2"
+          crossOrigin="anonymous"
+        />
+
+        <link
+          rel="preload"
+          as="font"
+          type="font/woff2"
+          href="/_next/static/media/d6f3920df5a15b13-s.p.woff2"
+          crossOrigin="anonymous"
+        />
+
         {/* TODO(schema jsonld): MAKE IT DYNAMIC DATA BASED ON EACH PAGE */}
         <SchemaJsonLd />
 

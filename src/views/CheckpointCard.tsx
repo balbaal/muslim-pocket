@@ -34,7 +34,7 @@ const CheckpointCard = () => {
         className="flex items-center justify-between"
       >
         <div className="flex flex-col">
-          <p className="text-2xl font-arabic font-bold">{checkpoint.name}</p>
+          <p className="text-2xl arabic-text font-bold">{checkpoint.name}</p>
           <p className="text-sm">
             {checkpoint.name_latin} ({checkpoint.number}:{checkpoint.ayah_number})
           </p>

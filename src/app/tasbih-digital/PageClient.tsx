@@ -21,7 +21,7 @@ const PageClient = () => {
   return (
     <div className="flex flex-col gap-10 items-center text-black dark:text-white">
       <div className="flex flex-col items-center select-none">
-        <p className="font-arabic font-bold text-xl">سُبْحَانَ اللّهِ</p>
+        <p className="arabic-text font-bold text-xl">سُبْحَانَ اللّهِ</p>
         <p className="text-8xl flex items-center justify-center gap-2">
           {counter} <span className="text-xl font-bold">X</span>
         </p>
