@@ -40,7 +40,7 @@ const FavoriteCard = () => {
           className="flex items-center justify-between rounded-lg bg-gray-100 text-black dark:bg-dark-800 dark:text-white shadow p-4"
         >
           <div className="flex flex-col">
-            <p className="text-2xl font-arabic font-bold">{item.name}</p>
+            <p className="text-2xl arabic-text font-bold">{item.name}</p>
             <p className="text-sm">
               {item.name_latin} ({item.number})
             </p>

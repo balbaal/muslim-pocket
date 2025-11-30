@@ -56,6 +56,10 @@
   animation: slide-up 0.3s ease-out;
 }
 
+.arabic-text {
+  font-family: var(--font-arabic), serif;
+}
+
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, sans-serif;
 }

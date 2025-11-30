@@ -44,7 +44,7 @@ const SurahCard: React.FC<SurahCardProps> = ({
       className="bg-gray-100 dark:bg-dark-800 rounded-lg p-4 flex gap-4 text-black dark:text-white"
     >
       <div className="flex items-start">
-        <p className="font-arabic mt-1 text-xl font-bold border border-gray-300 bg-white dark:bg-dark-800 rounded-full flex items-center justify-center w-8 h-8">
+        <p className="arabic-text mt-1 text-xl font-bold border border-gray-300 bg-white dark:bg-dark-800 rounded-full flex items-center justify-center w-8 h-8">
           {toArabicNumber(number)}
         </p>
       </div>
@@ -56,7 +56,7 @@ const SurahCard: React.FC<SurahCardProps> = ({
               {translation_name} • {number_of_ayah} Ayat
             </p>
           </div>
-          <p className="font-arabic font-bold text-2xl">{name}</p>
+          <p className="arabic-text font-bold text-2xl">{name}</p>
         </div>
         <div className="flex items-center justify-between">
           <p
