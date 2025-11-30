@@ -58,6 +58,11 @@ export default function RootLayout({
         <meta name="theme-color" content="#0a0a0a" />
         <meta name="apple-mobile-web-app-title" content="Muslimpocket.id" />
 
+        {/* priority css load, to reduce delay by:
+        preload it */}
+        <link rel="preload" href="/_next/static/css/98d2e6f0ed7b1d0e.css" as="style" />
+        <link rel="stylesheet" href="/_next/static/css/98d2e6f0ed7b1d0e.css" />
+
         {/* preload huge size font
         huge size determine on build path result */}
         <link

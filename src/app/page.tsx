@@ -29,7 +29,7 @@ const Home = () => {
         </h2>
         <div className="flex flex-col gap-2 shadow rounded-lg p-4 bg-gray-100 dark:bg-dark-800">
           <div className="flex flex-col gap-2">
-            <p className="text-right text-2xl">
+            <p className="text-right text-2xl arabic-text">
               وَاسْتَعِيْنُوْا بِالصَّبْرِ وَالصَّلٰوةِ ۗ وَاِنَّهَا لَكَبِيْرَةٌ اِلَّا عَلَى
               الْخٰشِعِيْنَۙ
             </p>
