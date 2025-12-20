@@ -42,8 +42,8 @@
 
 ## ⚙️ Requirements
 
-- **Node.js** version **v22.15.0** (Make sure your Node version matches for compatibility with Next.js 15)
-- **npm** or **yarn** as your package manager
+- **Node.js** version **v22.21.1** (Make sure your Node version matches for compatibility with Next.js 15)
+- Use **npm** as your package manager (To make sure Consistency for our development)
 
 ---
 
@@ -63,9 +63,6 @@ cd muslim-pocket
 ```bash
 # Using npm
 npm install
-
-# Or using yarn
-yarn install
 ```
 
 ### 3. Run the development server
@@ -73,9 +70,6 @@ yarn install
 ```bash
 # Using npm
 npm run dev
-
-# Or using yarn
-yarn dev
 ```
 
 Then open [http://localhost:3000](http://localhost:3000) in your browser.
